@@ -63,9 +63,9 @@ Event planner is an app that lets users create profiles, add events to their sch
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Event screen
+* Profile tab
+* 
 
 **Flow Navigation** (Screen to Screen)
 
