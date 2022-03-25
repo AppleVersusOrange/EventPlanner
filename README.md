@@ -27,10 +27,10 @@ Event planner is an app that lets users create profiles, add events to their sch
 **Required Must-have Stories**
 
 * User can create an account/login to their account
-* User can view local events
+* User can view local events (Eventbrite API, Google Maps API)
 * User can view what events they have planned
-* User can add new events to their schedule
-* User can click on an event to view detailed information
+* User can add new events to their schedule (Eventbrite API)
+* User can click on an event to view detailed information (Eventbrite API)
 * User can change their account settings
 * User can add friends/view their friends' profiles
 
