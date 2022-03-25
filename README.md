@@ -39,7 +39,6 @@ Event planner is an app that lets users create profiles, add events to their sch
 * Detailed view links to the artist's music usic Spotify
 * Filtered search for events (search events by genre, location, etc.)
 * User can post comments about an event they attended to their profile
-* 
 
 ### 2. Screen Archetypes
 
