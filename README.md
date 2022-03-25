@@ -62,18 +62,17 @@ Event planner is an app that lets users create profiles, add events to their sch
 
 **Tab Navigation** (Tab to Screen)
 
-* Event screen
-* Profile tab
-* 
+* Event stream screen tab.
+* Profile tab.
+* settings tab.
+* event schedule tab.
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* click on event on stream screen.
+   * goes to detail view of event.
+* click on friend in profile
+   * goes to friend's profile.
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
