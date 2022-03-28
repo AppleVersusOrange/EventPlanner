@@ -1,5 +1,5 @@
-# EventPlanner
-Event planner is an app that lets users create profiles, add events to their schedule, see other events in their area, and see what events their friends are attending.
+# Eventir
+Eventir is an app that lets users create profiles, add events to their schedule, see other events in their area, and see what events their friends are attending.
 
 ## Table of Contents
 1. [Overview](#Overview)
