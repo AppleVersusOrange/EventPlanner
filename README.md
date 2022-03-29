@@ -89,7 +89,7 @@ Eventir is an app that lets users create profiles, add events to their schedule,
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="EventPlanner/design/low1.JPG" width=600>
+<img src="./design/low1.JPG" width=600>
 ![title](EventPlanner/design/low1.JPG)
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/low2.JPG?token=GHSAT0AAAAAABS7HEW64G2BNY4GSO7MCRIYYSDRXUA" width=600>
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/low3.JPG?token=GHSAT0AAAAAABS7HEW7ZLDJQQ4XLNVNKHBWYSDRXVA" width=600>
