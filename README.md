@@ -79,12 +79,16 @@ Eventir is an app that lets users create profiles, add events to their schedule,
    * goes to event stream screen
 * click on Register button on in Login screen.
    * goes to registration screen
+* click on Register button in Registration screen
+   * goes to login screen
 * click on logout in profile screen
    * goes to login screen
 * click on login on login screen.
    * goes to schedule screen.
 * click on event's location in event detail view
    * goes to map screen
+* click on a schedule list in the schedule lists screen
+   * goes to the screen for that schedule list
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
