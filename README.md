@@ -104,6 +104,8 @@ link to figma file containing mockups https://www.figma.com/file/bEEWBn9xFFqGLcf
 
 ### [BONUS] Interactive Prototype
 
+<img src='http://g.recordit.co/VCb0TXWou5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
