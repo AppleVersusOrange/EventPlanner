@@ -11,7 +11,6 @@
 Eventir is an app that lets users create profiles, add events to their schedule, see other events in their area, and see what events their friends are attending.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category: Social Media/Lifestyle**
 - **Mobile: It is more convenient for the user to access this on their phone in order to view their schedule at a glance, as well as have reminders for what's next in their day.**
 - **Story:**
