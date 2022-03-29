@@ -1,5 +1,4 @@
 # Eventir
-Eventir is an app that lets users create profiles, add events to their schedule, see other events in their area, and see what events their friends are attending.
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -9,7 +8,7 @@ Eventir is an app that lets users create profiles, add events to their schedule,
 
 ## Overview
 ### Description
-[Description of your app]
+Eventir is an app that lets users create profiles, add events to their schedule, see other events in their area, and see what events their friends are attending.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
@@ -56,7 +55,6 @@ Eventir is an app that lets users create profiles, add events to their schedule,
    * User can view their own/their friends' profile
 * Settings
    * User can change their account settings
-*
 
 ### 3. Navigation
 
@@ -89,6 +87,7 @@ Eventir is an app that lets users create profiles, add events to their schedule,
    * goes to map screen
 * click on a schedule list in the schedule lists screen
    * goes to the screen for that schedule list
+
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/low1.JPG?token=GHSAT0AAAAAABS7HEW7OUFC5JCV2VQ3HSEUYSDRXRQ" width=600>
@@ -96,6 +95,9 @@ Eventir is an app that lets users create profiles, add events to their schedule,
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/low3.JPG?token=GHSAT0AAAAAABS7HEW7ZLDJQQ4XLNVNKHBWYSDRXVA" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/1.JPG?token=GHSAT0AAAAAABS7HEW7DQRSV2ZP3BWUYPKAYSDRZJA" width=600>
+<img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/2.JPG?token=GHSAT0AAAAAABS7HEW6I3YVXRA5ZDFONWBUYSDRZKA" width=600>
+<img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/3.JPG?token=GHSAT0AAAAAABS7HEW7KOEYWWLS7Y5KJOZWYSDRZLA" width=600>
 
 ### [BONUS] Interactive Prototype
 
