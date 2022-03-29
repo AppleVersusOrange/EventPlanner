@@ -93,10 +93,14 @@ Eventir is an app that lets users create profiles, add events to their schedule,
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/low2.JPG?token=GHSAT0AAAAAABS7HEW64G2BNY4GSO7MCRIYYSDRXUA" width=600>
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/low3.JPG?token=GHSAT0AAAAAABS7HEW7ZLDJQQ4XLNVNKHBWYSDRXVA" width=600>
 
+link to figma file containing wireframes https://www.figma.com/file/aa8yCe7yaNZsqETiwXledP/Low-Fidelity?node-id=0%3A1.
+
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/1.JPG?token=GHSAT0AAAAAABS7HEW7DQRSV2ZP3BWUYPKAYSDRZJA" width=600>
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/2.JPG?token=GHSAT0AAAAAABS7HEW6I3YVXRA5ZDFONWBUYSDRZKA" width=600>
 <img src="https://raw.githubusercontent.com/AppleVersusOrange/EventPlanner/main/design/3.JPG?token=GHSAT0AAAAAABS7HEW7KOEYWWLS7Y5KJOZWYSDRZLA" width=600>
+
+link to figma file containing mockups https://www.figma.com/file/bEEWBn9xFFqGLcfBX5fRyQ/High-fidelity?node-id=0%3A1.
 
 ### [BONUS] Interactive Prototype
 
