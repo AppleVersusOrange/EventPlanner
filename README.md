@@ -114,3 +114,11 @@ link to figma file containing mockups https://www.figma.com/file/bEEWBn9xFFqGLcf
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+### Existing API Endpoints
+##### TicketMaster API
+- Base URL - [https://app.ticketmaster.com/discovery/v2](https://app.ticketmaster.com/discovery/v2)
+
+   HTTP Verb | Endpoint | Parameters | Description
+   ----------|----------|-------------|------------
+    `GET`    | /events | postalCode, radius, unit | Finds events and filters your search
+
