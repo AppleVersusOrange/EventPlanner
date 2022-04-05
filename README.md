@@ -169,6 +169,10 @@ Schedule:
 
 (Update/PUT) (When added as friend) Update logged in User's friends list with the queried User
 
+(Read/GET) Query the most recent event in the User's schedule where event date is less than current date
+
+(Read/GET) Query the next event in the User's schedule where event date is greater than current date
+
 
 **Registration Screen:**
 
