@@ -183,7 +183,7 @@ Schedule:
 
 **Event Feed Screen:**
 
-(Create/POST) When button for adding event is clicked it adds that event to database with current user attached to it.
+(Create/POST) When button for adding an event is clicked it creates a new row in the events table with selected event linked to current user by their username.
 
 ### [OPTIONAL:] Existing API Endpoints
 ##### TicketMaster API
