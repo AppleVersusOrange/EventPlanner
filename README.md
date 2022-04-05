@@ -125,48 +125,25 @@ User:
 
 Event:
 
-Property
-Type
-Description
-objectId
-String
-Unique ID for each event (default field)
-location
-String
-The address where the event takes place
-genre
-String
-What type of event this is
-image
-File
-Image that previews the event
-venue
-String
-The venue that the event will be held at
-date
-Date
-The date that the event takes place
+| Property | Type | Description |
+| :---    | :-- |  :---      |
+| objectId | String | Unique ID for each event (default field) |
+| location | String | The address where the event takes place |
+| genre | String | What type of event this is |
+| image | File | Image that previews the event |
+| venue | String | The venue that the event will be held at |
+| date | Date | The date that the event takes place |
 
 
 
 Schedule:
 
-
-Property
-Type
-Description
-objectID
-String
-Unique ID for each schedule a user has
-scheduleName
-String
-User-decided name for the schedule
-ownerID
-Pointer to User object
-Points to the ID of the User that owns this schedule
-events
-Array of Pointers to Event objects
-The list of all the events in the schedule
+| Property | Type | Description |
+| :---    | :-- |  :---      |
+| objectID | String | Unique ID for each schedule a user has |
+| scheduleName | String | User-decided name for the schedule |
+| ownerID | Pointer to User object | Points to the ID of the User that owns this schedule |
+| events | Array of Pointers to Event objects | The list of all the events in the schedule |
 
 
 ### Networking
