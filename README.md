@@ -181,6 +181,10 @@ Schedule:
 
 (Read/GET) (Search Users Bar) Query all Users where username = typed in username
 
+**Event Feed Screen:**
+
+(Create/POST) When button for adding event is clicked it adds that event to database with current user attached to it.
+
 ### [OPTIONAL:] Existing API Endpoints
 ##### TicketMaster API
 - Base URL - [https://app.ticketmaster.com/discovery/v2](https://app.ticketmaster.com/discovery/v2)
