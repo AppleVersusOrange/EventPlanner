@@ -189,6 +189,10 @@ Schedule:
 
 (Create/POST) When button for adding an event is clicked it creates a new row in the events table with selected event linked to current user by their username.
 
+**Event Detail Screen:**
+
+(Read/GET) Query the event's address to open in maps screen
+
 ### [OPTIONAL:] Existing API Endpoints
 ##### TicketMaster API
 - Base URL - [https://app.ticketmaster.com/discovery/v2](https://app.ticketmaster.com/discovery/v2)
