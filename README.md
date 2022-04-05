@@ -109,7 +109,66 @@ link to figma file containing mockups https://www.figma.com/file/bEEWBn9xFFqGLcf
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+User:
+
+| Property | Type | Description |
+| :---    | :-- |  :---      |
+| objectId | String | Unique ID for each user (default field) |
+| username | String | User’s public display name |
+| password | String | Password used for this user to login |
+| profilePicture | File |User’s profile picture |
+| zipCode | String | User’s ZIP code |
+| visibility | Boolean | Denotes whether or not user’s profile is visible to others (0 = private, 1 = public) |
+| schedule | Pointer to Schedule Object | List of events that the User has currently added to their schedule |
+| friendList | Array of Pointers to User objects | List of users that this User has added as a friend |
+
+
+Event:
+
+Property
+Type
+Description
+objectId
+String
+Unique ID for each event (default field)
+location
+String
+The address where the event takes place
+genre
+String
+What type of event this is
+image
+File
+Image that previews the event
+venue
+String
+The venue that the event will be held at
+date
+Date
+The date that the event takes place
+
+
+
+Schedule:
+
+
+Property
+Type
+Description
+objectID
+String
+Unique ID for each schedule a user has
+scheduleName
+String
+User-decided name for the schedule
+ownerID
+Pointer to User object
+Points to the ID of the User that owns this schedule
+events
+Array of Pointers to Event objects
+The list of all the events in the schedule
+
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
