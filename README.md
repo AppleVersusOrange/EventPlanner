@@ -152,6 +152,7 @@ Profile Screen:
 (Read/GET) Query logged in User object
 
 
+
 Settings Screen:
 
 (Read/GET) Query logged in User object
@@ -163,6 +164,7 @@ Settings Screen:
 (Update/PUT) Update User's Profile image
 
 
+
 View Others' Profile Screen:
 
 (Read/GET) Query clicked on User object
@@ -170,9 +172,11 @@ View Others' Profile Screen:
 (Update/PUT) (When added as friend) Update logged in User's friends list with the queried User
 
 
+
 Registration Screen:
 
 (Create/POST) Create a new User object
+
 
 
 Friends List Screen:
