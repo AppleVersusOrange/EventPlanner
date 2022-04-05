@@ -153,20 +153,32 @@ Profile Screen:
 
 
 Settings Screen:
+
 (Read/GET) Query logged in User object
+
 (Update/PUT) Update User's privacy setting
+
 (Update/PUT) Update User's ZIP code
+
 (Update/PUT) Update User's Profile image
 
-View Others' Profile Screen
+
+View Others' Profile Screen:
+
 (Read/GET) Query clicked on User object
+
 (Update/PUT) (When added as friend) Update logged in User's friends list with the queried User
 
-Registration Screen
+
+Registration Screen:
+
 (Create/POST) Create a new User object
 
-Friends List Screen
+
+Friends List Screen:
+
 (Read/GET) Query all Users in logged in User's friends list
+
 (Read/GET) (Search Users Bar) Query all Users where username = typed in username
 
 ### [OPTIONAL:] Existing API Endpoints
