@@ -148,7 +148,9 @@ Schedule:
 
 ### Networking
 Profile Screen:
+
 (Read/GET) Query logged in User object
+
 
 Settings Screen:
 (Read/GET) Query logged in User object
