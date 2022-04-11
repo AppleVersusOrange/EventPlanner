@@ -7,7 +7,7 @@ import com.parse.ParseUser;
 @ParseClassName("ScheduleList")
 public class ScheduleList extends ParseObject {
     public static final String KEY_OWNERID = "ownerID";
-    public static final String KEY_OBJECTID = "objectID";               //optional for now: index of a schedule list
+    public static final String KEY_CREATED_DATE = "createdAt";               //optional for now: index of a schedule list
     public static final String KEY_SCHEDULENAME = "scheduleName";
 
     //getter for name
