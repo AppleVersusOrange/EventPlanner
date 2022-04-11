@@ -15,7 +15,7 @@ public class TicketMasterClient  {
     public TicketMasterClient (){
         this.client = new AsyncHttpClient();
     }
-
+    //change to also take in second argument the zipcode.
     public void getEvents(JsonHttpResponseHandler handler) {
         String apiUrl = BASE_URL + "events.json";
         RequestParams params = new RequestParams();

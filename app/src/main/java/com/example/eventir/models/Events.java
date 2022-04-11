@@ -10,9 +10,11 @@ import java.util.List;
 
 @Parcel
 public class Events {
-        public String title;
+        public String attraction;
         public String date;
         public String imageUrl;
+        public String genre;
+        public String venue;
 
         public Events() {
         }
@@ -20,9 +22,25 @@ public class Events {
         public static Events fromJson(JSONObject jsonObject) throws JSONException {
             Events event = new Events();
 
-            event.title = jsonObject.getString("name");
-            //event.date = jsonObject.getString("created_at");
-            //event.imageUrl = jsonObject.getString("created_at");
+            JSONObject venueObject = jsonObject.getJSONObject("_embedded");
+            JSONArray venueArray = venueObject.getJSONArray("venues");
+            venueObject = venueArray.getJSONObject(0);
+            event.venue = venueObject.getString("name");
+
+            event.attraction = jsonObject.getString("name");
+
+            JSONArray jsonArray = jsonObject.getJSONArray("images");
+            JSONObject image = jsonArray.getJSONObject(0);
+            event.imageUrl = image.getString("url");
+
+            JSONObject dateObject = jsonObject.getJSONObject("dates");
+            dateObject = dateObject.getJSONObject("start");
+            event.date = dateObject.getString("localDate");
+
+            JSONArray genreArray = jsonObject.getJSONArray("classifications");
+            JSONObject genreObject = genreArray.getJSONObject(0);
+            genreObject = genreObject.getJSONObject("segment");
+            event.genre = genreObject.getString("name");
 
             return event;
         }
