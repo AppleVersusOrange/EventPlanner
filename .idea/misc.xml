@@ -8,6 +8,7 @@
         <entry key="..\:/Users/Spets/Documents/GitHub/EventPlanner/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Spets/Documents/GitHub/EventPlanner/app/src/main/res/layout/fragment_schedule.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Spets/Documents/GitHub/EventPlanner/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Spets/Documents/GitHub/EventPlanner/app/src/main/res/layout/item_events.xml" value="0.5" />
         <entry key="..\:/Users/Spets/Documents/GitHub/EventPlanner/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/david/OneDrive/Documents/Spring 22/CS388 Android Dev Baruch Schieber/finalproject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/david/OneDrive/Documents/Spring 22/CS388 Android Dev Baruch Schieber/finalproject/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -19,6 +20,7 @@
         <entry key="..\:/Users/david/OneDrive/Documents/Spring 22/CS388 Android Dev Baruch Schieber/finalproject/app/src/main/res/layout/schedule_list.xml" value="0.1" />
         <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/activity_login1.xml" value="0.1" />
+        <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/activity_registration.xml" value="0.2" />
       </map>
     </option>
   </component>
