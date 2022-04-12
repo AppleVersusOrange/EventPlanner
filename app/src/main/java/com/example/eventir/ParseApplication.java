@@ -13,8 +13,8 @@ public class ParseApplication extends Application {
         //ParseObject.registerSubclass(model.class); replace model with particular model name, such as user.
 
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("wopR2672aSLGOKqYh6XkanTSRNTHeCCJcqFnXF1t")
-                .clientKey("aYSRk3FYwhRPSue7a6lMBTSn3DNiCX4AeO4l7MBF")
+                .applicationId("maanf6quU5aSI6nhP7oOmVRuLDjfOGgG2FvikfMi")
+                .clientKey("vDMN5vBlN87JGWLhMnNxRVpAgg87dGtCZCfPpiAO")
                 .server("https://parseapi.back4app.com")
                 .build()
         );
