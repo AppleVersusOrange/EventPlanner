@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.LoginActivity">
 
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter Username"
+        android:minHeight="48dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnLogin"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textSize="16sp" />
+
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="164dp"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_weight="1"
-        android:text="Login" />
-</LinearLayout>
+        android:text="Login"
+        app:cornerRadius="5dp" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Register"
+        app:cornerRadius="5dp" />
+</RelativeLayout>
