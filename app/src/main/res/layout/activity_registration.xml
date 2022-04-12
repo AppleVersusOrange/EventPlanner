@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RegistrationActivity">
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Register" />
+
+    <EditText
+        android:id="@+id/etNewPassword"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSignUp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:hint="Create Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/etNewUsername"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etNewPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:hint="Create Username"
+        android:minHeight="48dp" />
+</RelativeLayout>
