@@ -34,6 +34,7 @@ replay_pid*
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+/.idea/misc.xml
 .DS_Store
 /build
 /captures
@@ -42,4 +43,4 @@ replay_pid*
 local.properties
 
 apikey.properties
-.idea/misc.xml
+
