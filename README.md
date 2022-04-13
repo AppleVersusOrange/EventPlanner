@@ -5,7 +5,7 @@
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
-3. [Milestone 1](#Milestone 1)
+4. [Milestone 1](#Milestone 1)
 
 ## Overview
 ### Description
@@ -207,10 +207,13 @@ Schedule:
  **completed user stories**
  
 [x] User can view events. 
+
 [x] User can create/login to their account.
+
 [x] User can view what events they have planned.
     
 here is a walkthrough of the completed stories.
+
 <img src='http://g.recordit.co/82DcOUMc6j.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
     
     
