@@ -14,13 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.eventir.R;
-import com.example.eventir.ScheduleList;
-import com.example.eventir.ScheduleListsAdapter;
+import com.example.eventir.models.ScheduleList;
+import com.example.eventir.adapters.ScheduleListsAdapter;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,7 +69,9 @@ public class ScheduleFragment extends Fragment {
         queryScheduleLists();
     }
     protected void queryScheduleLists() {
+        ParseUser currentUser = ParseUser.getCurrentUser();
         ParseQuery<ScheduleList> query = ParseQuery.getQuery(ScheduleList.class);
+        testquery.whereEqualTo("ownerID", currentUser);
         query.include(ScheduleList.KEY_OWNERID);
         query.setLimit(20);
         query.addDescendingOrder(ScheduleList.KEY_CREATED_DATE);

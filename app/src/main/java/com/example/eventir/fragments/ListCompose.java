@@ -1,7 +1,5 @@
 package com.example.eventir.fragments;
 
-import static android.app.Activity.RESULT_OK;
-
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -12,18 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.eventir.R;
-import com.example.eventir.ScheduleList;
+import com.example.eventir.models.ScheduleList;
 import com.example.eventir.activities.LoginActivity;
 import com.parse.ParseException;
-import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-
-import java.io.File;
 
 public class ListCompose extends Fragment {
 

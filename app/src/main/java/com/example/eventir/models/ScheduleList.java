@@ -1,10 +1,10 @@
-package com.example.eventir;
+package com.example.eventir.models;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-@ParseClassName("ScheduleList")
+@ParseClassName("Schedule")
 public class ScheduleList extends ParseObject {
     public static final String KEY_OWNERID = "ownerID";
     public static final String KEY_CREATED_DATE = "createdAt";               //optional for now: index of a schedule list

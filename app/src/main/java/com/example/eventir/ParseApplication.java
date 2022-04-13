@@ -3,6 +3,7 @@ package com.example.eventir;
 import android.app.Application;
 
 // import com.example.eventir.models.x import models here
+import com.example.eventir.models.ScheduleList;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
