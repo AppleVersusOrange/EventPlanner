@@ -11,6 +11,7 @@ public class ParseApplication extends Application {
         super.onCreate();
 
         //ParseObject.registerSubclass(model.class); replace model with particular model name, such as user.
+        ParseObject.registerSubclass(ScheduleList.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId("maanf6quU5aSI6nhP7oOmVRuLDjfOGgG2FvikfMi")
