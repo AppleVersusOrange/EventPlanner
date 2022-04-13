@@ -71,7 +71,7 @@ public class ScheduleFragment extends Fragment {
     protected void queryScheduleLists() {
         ParseUser currentUser = ParseUser.getCurrentUser();
         ParseQuery<ScheduleList> query = ParseQuery.getQuery(ScheduleList.class);
-        testquery.whereEqualTo("ownerID", currentUser);
+        query.whereEqualTo("ownerID", currentUser);
         query.include(ScheduleList.KEY_OWNERID);
         query.setLimit(20);
         query.addDescendingOrder(ScheduleList.KEY_CREATED_DATE);
