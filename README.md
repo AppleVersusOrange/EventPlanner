@@ -214,7 +214,7 @@ Schedule:
     
 here is a walkthrough of the completed stories.
 
-<img src='http://g.recordit.co/82DcOUMc6j.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/lXYwGqahPl.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
     
     
     
