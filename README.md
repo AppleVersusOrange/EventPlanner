@@ -5,7 +5,7 @@
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
-4. [Milestone 1](#Milestone 1)
+4. [Milestone-1](#Milestone-1)
 
 ## Overview
 ### Description
@@ -202,7 +202,7 @@ Schedule:
    ----------|----------|-------------|------------
     `GET`    | /events | postalCode, radius, unit | Finds events and filters your search
     
-    ## Milestone 1
+    ## Milestone-1
     
  **completed user stories**
  
