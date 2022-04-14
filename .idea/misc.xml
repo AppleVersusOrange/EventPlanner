@@ -22,6 +22,11 @@
         <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/activity_login1.xml" value="0.1" />
         <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/activity_registration.xml" value="0.2" />
+        <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/fragment_feed.xml" value="0.11778115501519756" />
+        <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/fragment_list_compose.xml" value="0.11778115501519756" />
+        <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/fragment_profile.xml" value="0.11778115501519756" />
+        <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/fragment_schedule.xml" value="0.1" />
+        <entry key="..\:/Users/frank/AndroidStudioProjects/Eventer/EventPlanner/app/src/main/res/layout/item_events.xml" value="0.11778115501519756" />
       </map>
     </option>
   </component>
