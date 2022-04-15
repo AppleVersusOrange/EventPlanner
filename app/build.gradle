@@ -19,6 +19,7 @@ android {
 
         buildConfigField("String", "CONSUMER_KEY", apikeyProperties['CONSUMER_KEY'])
         buildConfigField("String", "CONSUMER_SECRET", apikeyProperties['CONSUMER_SECRET'])
+        buildConfigField("String", "ZIP_KEY", apikeyProperties['ZIP_KEY'])
     }
 
     buildTypes {

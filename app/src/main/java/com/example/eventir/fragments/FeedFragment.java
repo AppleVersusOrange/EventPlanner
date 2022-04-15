@@ -15,6 +15,7 @@ import com.example.eventir.R;
 import com.example.eventir.adapters.EventFeedAdapter;
 import com.example.eventir.models.Events;
 import com.example.eventir.networking.TicketMasterClient;
+import com.example.eventir.networking.ZipCodeClient;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,9 +29,11 @@ import okhttp3.Headers;
 public class FeedFragment extends Fragment {
     public static final String TAG = "FeedFragment";
     private TicketMasterClient client;
+    private ZipCodeClient ZipClient;
     private List<Events> events;
     private RecyclerView rvEventFeed;
     private EventFeedAdapter eventFeedAdapter;
+    public String latLong;
 
 
 
@@ -50,6 +53,7 @@ public class FeedFragment extends Fragment {
         rvEventFeed = view.findViewById(R.id.rvEventFeed);
 
         client = new TicketMasterClient();
+        ZipClient = new ZipCodeClient();
         events = new ArrayList<>();
         eventFeedAdapter = new EventFeedAdapter(getContext(), events);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -59,6 +63,26 @@ public class FeedFragment extends Fragment {
     }
 
     private void retrieveEventFeed(){
+        ZipClient.getLat(new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Headers headers, JSON json) {
+                Log.i(TAG, "Events were retrieved.");
+                JSONObject jsonObject = json.jsonObject;
+                try {
+                    String lat = jsonObject.getString("lat");
+                    String lon = jsonObject.getString("lng");
+                    latLong = lat + "," + lon;
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("TAG", "Json exception on results");
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
+                Log.e(TAG, "Error in getting LatLong." + response, throwable);
+                latLong = "40.40179,-73.98728";
+            }
+        });
         client.getEvents(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
@@ -79,6 +103,6 @@ public class FeedFragment extends Fragment {
             public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
                 Log.e(TAG, "Error in getting events." + response, throwable);
             }
-        });
+        }, latLong);
     }
 }
