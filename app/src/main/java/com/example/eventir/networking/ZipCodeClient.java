@@ -14,8 +14,8 @@ public class ZipCodeClient  {
         this.client = new AsyncHttpClient();
     }
     //change to also take in second argument the zipcode.
-    public void getLat(JsonHttpResponseHandler handler) {
-        String apiUrl = String.format("https://www.zipcodeapi.com/rest/%s/info.json/%s/degrees",REST_CONSUMER_KEY,"07732");
+    public void getLat(JsonHttpResponseHandler handler, String zipCode) {
+        String apiUrl = String.format("https://www.zipcodeapi.com/rest/%s/info.json/%s/degrees",REST_CONSUMER_KEY, zipCode);
         RequestParams params = new RequestParams();
         client.get(apiUrl, handler);
     }
