@@ -16,13 +16,13 @@ public class TicketMasterClient  {
         this.client = new AsyncHttpClient();
     }
     //change to also take in second argument the zipcode.
-    public void getEvents(JsonHttpResponseHandler handler) {
+    public void getEvents(JsonHttpResponseHandler handler, String latLong) {
         String apiUrl = BASE_URL + "events.json";
         RequestParams params = new RequestParams();
         //change this to get the user's zipcode by from DB.
         params.put("apikey", REST_CONSUMER_KEY);
-        params.put("postalCode", "07102");
-        params.put("radius", "10");
+        params.put("latlong", latLong);
+        params.put("radius", "15");
         client.get(apiUrl, params, handler);
     }
 }
