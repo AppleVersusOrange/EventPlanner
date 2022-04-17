@@ -1,12 +1,14 @@
 package com.example.eventir.fragments;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +19,7 @@ import com.example.eventir.models.Events;
 import com.example.eventir.networking.TicketMasterClient;
 import com.example.eventir.networking.ZipCodeClient;
 import com.parse.ParseUser;
+import org.parceler.Parcels;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,6 +65,25 @@ public class FeedFragment extends Fragment {
         rvEventFeed.setLayoutManager(linearLayoutManager);
         rvEventFeed.setAdapter(eventFeedAdapter);
         retrieveEventFeed();
+
+
+        eventFeedAdapter.setOnItemClickListener(new EventFeedAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+
+                Fragment fragment = new EventDetailFragment();
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("Event",  Parcels.wrap(events.get(position)));
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.flContainer, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+
+
+
+            }
+        });
     }
 
     private void retrieveEventFeed(){
