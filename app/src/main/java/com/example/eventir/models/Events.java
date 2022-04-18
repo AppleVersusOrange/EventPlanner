@@ -15,6 +15,9 @@ public class Events {
         public String imageUrl;
         public String genre;
         public String venue;
+        public String address;
+        public int longitude;
+        public int latitude;
 
         public Events() {
         }
@@ -26,6 +29,16 @@ public class Events {
             JSONArray venueArray = venueObject.getJSONArray("venues");
             venueObject = venueArray.getJSONObject(0);
             event.venue = venueObject.getString("name");
+            JSONObject line1 = venueObject.getJSONObject("address");
+            event.address = line1.getString("line1");
+            JSONObject city = venueObject.getJSONObject("city");
+            event.address = event.address + ", " + city.getString("name");
+            JSONObject state = venueObject.getJSONObject("state");
+            event.address = event.address + " " + state.getString("name");
+
+            JSONObject location = venueObject.getJSONObject("location");
+            event.longitude = location.getInt("longitude");
+            event.latitude = location.getInt("latitude");
 
             event.attraction = jsonObject.getString("name");
 

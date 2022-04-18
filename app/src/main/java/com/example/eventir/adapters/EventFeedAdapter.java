@@ -70,13 +70,11 @@ public class EventFeedAdapter extends RecyclerView.Adapter<EventFeedAdapter.View
         private TextView tvEventDate;
         private TextView tvGenre;
         private ImageView ivEventPic;
-        private TextView tvVenueName;
 
 
         public ViewHolder(@NonNull View itemView, final  OnItemClickListener listener) {
             super(itemView);
             tvEventTitle = itemView.findViewById(R.id.tvEventTitle);
-            tvVenueName = itemView.findViewById(R.id.tvVenueName);
             tvEventDate = itemView.findViewById(R.id.tvEventDate);
             tvGenre = itemView.findViewById(R.id.tvGenre);
             ivEventPic = itemView.findViewById(R.id.ivEventPic);
@@ -91,7 +89,6 @@ public class EventFeedAdapter extends RecyclerView.Adapter<EventFeedAdapter.View
 
         public void bind(Events events) {
             tvEventTitle.setText(events.attraction);
-            tvVenueName.setText(events.venue);
             tvEventDate.setText(events.date);
             tvGenre.setText("Genre: " + events.genre);
 

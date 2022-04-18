@@ -22,6 +22,8 @@ public class EventDetailFragment extends Fragment {
     private TextView tvGenre;
     private ImageView ivEventPic;
     private TextView tvVenueName;
+    private TextView tvAddress;
+
 
     public EventDetailFragment() {
 
@@ -40,6 +42,7 @@ public class EventDetailFragment extends Fragment {
         tvEventDate = view.findViewById(R.id.tvEventDate);
         tvGenre = view.findViewById(R.id.tvGenre);
         ivEventPic = view.findViewById(R.id.ivEventPic);
+        tvAddress = view.findViewById(R.id.tvAddress);
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
@@ -49,6 +52,7 @@ public class EventDetailFragment extends Fragment {
         tvEventTitle.setText(event.attraction);
         tvVenueName.setText(event.venue);
         tvEventDate.setText(event.date);
+        tvAddress.setText(event.address);
         tvGenre.setText("Genre: " + event.genre);
 
         Glide.with(getContext())
