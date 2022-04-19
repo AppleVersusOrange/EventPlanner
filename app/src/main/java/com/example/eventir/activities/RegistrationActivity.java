@@ -31,7 +31,6 @@ public class RegistrationActivity extends AppCompatActivity {
                 String username = etNewUsername.getText().toString();
                 String password = etNewPassword.getText().toString();
                 registerUser(username,password);
-                goMainActivity();
             }
         });
     }
@@ -51,6 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
         user.signUpInBackground(e -> {
             if (e == null) {
                 Toast.makeText(this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
+                goMainActivity();
             } else {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
