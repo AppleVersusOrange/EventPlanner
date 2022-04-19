@@ -233,7 +233,15 @@ here is a walkthrough of the completed stories.
     
 here is a walkthrough of the completed stories.
 
+User can view an event in event detail screen.
+
+User can search Events in radius around them.
+
 <img src='http://g.recordit.co/bEqIuXjQQ1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+User Profile Page.
+
+User can view/edit Settings.
 
 <img src='Profile_Settings.gif' width='250'> <br>
 
