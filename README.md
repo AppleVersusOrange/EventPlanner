@@ -234,6 +234,9 @@ here is a walkthrough of the completed stories.
 here is a walkthrough of the completed stories.
 
 <img src='http://g.recordit.co/lXYwGqahPl.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='Profile_Settings.gif' width='250'> <br>
+
     
     
 
