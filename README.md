@@ -6,6 +6,7 @@
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
 4. [Milestone-1](#Milestone-1)
+5. [Milestone-2](#Milestone-2)
 
 ## Overview
 ### Description
@@ -216,6 +217,23 @@ here is a walkthrough of the completed stories.
 
 <img src='http://g.recordit.co/lXYwGqahPl.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
     
+ ## Milestone-2
+    
+ **completed user stories**
+ 
+[x] User can view/edit Settings. 
+
+[x] User can view an event in event detail screen.
+
+[x] User can search Events in radius around them.
+
+[x] User Profile Page.
+
+[ ] User can add events to the schedule.
+    
+here is a walkthrough of the completed stories.
+
+<img src='http://g.recordit.co/lXYwGqahPl.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
     
     
 
