@@ -217,7 +217,7 @@ here is a walkthrough of the completed stories.
 
 <img src='http://g.recordit.co/lXYwGqahPl.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
     
- ## Milestone-1
+ ## Milestone-2
     
  **completed user stories**
  
