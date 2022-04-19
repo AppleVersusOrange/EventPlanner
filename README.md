@@ -229,9 +229,11 @@ here is a walkthrough of the completed stories.
 
 [x] User Profile Page.
 
+**incomplete user stories**
+
 [ ] User can add events to the schedule.
-    
-here is a walkthrough of the completed stories.
+
+**GIF Walkthrough**
 
 User can view an event in event detail screen.
 
