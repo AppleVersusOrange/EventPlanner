@@ -136,7 +136,18 @@ Event:
 | venue | String | The venue that the event will be held at |
 | date | Date | The date that the event takes place |
 
+Event (back4app): 
 
+| Property | Type | Description |
+| :---    | :-- |  :---      |
+| objectId | String | Unique ID for each event (default field) |
+| Attraction | String | Name of the event added by the user to the planned events
+| date | Date | The date that the event takes place |
+| ownerID | Pointer to User object | Points to the ID of the User that owns this
+| location | String | The address where the event takes place |
+| genre | String | What type of event this is |
+| image | File | Image that previews the event |
+| venue | String | The venue that the event will be held at |
 
 Schedule:
 
