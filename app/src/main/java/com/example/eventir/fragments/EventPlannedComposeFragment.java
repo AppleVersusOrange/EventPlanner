@@ -7,24 +7,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.eventir.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link EventPlannedComposeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class EventPlannedComposeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    public static final String TAG = "EventPlannedComposeFragment";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    public EditText etAttraction;
+    private Button btnSubmit;
+    private Button btnLogout;
 
     public EventPlannedComposeFragment() {
         // Required empty public constructor
