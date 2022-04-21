@@ -62,7 +62,10 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
 
         public void bind(EventsPlanned event){
             //Bind event data to view elements
-            //tvEventTitle.setText(post.)
+            tvUsername.setText(event.getUser().getUsername());
+            tvEventTitle.setText(event.getAttraction());
+            tvEventDate.setText(event.getUserDate());
+            tvGenre.setText(event.getGenre());
         }
     }
 
