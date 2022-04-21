@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eventir.R;
 import com.example.eventir.models.EventsPlanned;
+import com.example.eventir.models.ScheduleList;
 
 import java.util.List;
 
@@ -67,6 +68,16 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
             tvEventDate.setText(event.getUserDate());
             tvGenre.setText(event.getGenre());
         }
+    }
+
+    public void clear() {
+        lists.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(List<EventsPlanned> list) {
+        lists.addAll(list);
+        notifyDataSetChanged();
     }
 
 
