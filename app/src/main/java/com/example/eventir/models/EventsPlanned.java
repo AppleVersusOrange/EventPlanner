@@ -17,6 +17,7 @@ public class EventsPlanned extends ParseObject {
     public static final String KEY_EVENT_DATE = "userdate";
     public static final String KEY_GENRE = "genre";
     public static final String KEY_OWNERID = "ownerID";
+    public static final String KEY_CREATED_DATE = "createdAt";
 
     //setters
     public void setUser(ParseUser user){
