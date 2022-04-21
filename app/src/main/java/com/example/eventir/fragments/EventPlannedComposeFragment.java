@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +15,15 @@ import android.widget.Toast;
 
 import com.example.eventir.R;
 import com.example.eventir.activities.LoginActivity;
+import com.example.eventir.models.EventsPlanned;
+import com.example.eventir.models.ScheduleList;
+import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 public class EventPlannedComposeFragment extends Fragment {
 
-    public static final String TAG = "EventPlannedComposeFragment";
+    public static final String TAG = "EventPlannedCompose";
 
     public EditText etEventTitle;
     public EditText etEventDate;
@@ -75,7 +80,7 @@ public class EventPlannedComposeFragment extends Fragment {
                     return;
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
-                saveEvent(event_title, event_date, event_genre);
+                saveEvent(event_title, event_date, event_genre, currentUser);
             }
         });
 
@@ -85,6 +90,30 @@ public class EventPlannedComposeFragment extends Fragment {
                 ParseUser.logOut();
                 ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
                 gotoLoginActivity();
+            }
+        });
+    }
+
+
+    private void saveEvent(String event_title, String event_date, String event_genre ,ParseUser currentUser) {                  //private initially
+        EventsPlanned event = new EventsPlanned();
+        event.setAttraction(event_title);
+        event.setUserDate(event_date);
+        event.setGenre(event_genre);
+        event.setUser(currentUser);
+
+        event.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if(e != null){
+                    Log.e(TAG, "Error while saving", e);
+                    Toast.makeText(getContext(), "Error while saving!", Toast.LENGTH_SHORT).show();
+                }
+                Log.i(TAG, "Post save was successful!");
+                etEventTitle.setText("");
+                etEventDate.setText("");
+                etGenre.setText("");
+
             }
         });
     }
