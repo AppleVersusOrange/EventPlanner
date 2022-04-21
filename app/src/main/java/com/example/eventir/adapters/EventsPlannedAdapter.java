@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,24 +25,45 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.fragment_events_planned, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.event_planned, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EventFeedAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         EventsPlanned list = lists.get(position);
+
 
         holder.bind(list);
     }
 
     @Override
-    public int getItemCount(){ return list.size(); }
+    public int getItemCount(){ return lists.size(); }
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView tv
+        private TextView tvEventTitle;
+        private TextView tvEventDate;
+        private TextView tvGenre;
+        private TextView tvUsername;
 
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            tvEventTitle = itemView.findViewById(R.id.tvEventTitle);
+
+            tvEventDate= itemView.findViewById(R.id.tvEventDate);
+
+            tvGenre = itemView.findViewById(R.id.tvGenre);
+
+            tvUsername = itemView.findViewById(R.id.tvUserName);
+
+        }
+
+        public void bind(EventsPlanned event){
+            //Bind event data to view elements
+            //tvEventTitle.setText(post.)
+        }
     }
 
 
