@@ -143,6 +143,7 @@ Event (back4app):
 | objectId | String | Unique ID for each event (default field) |
 | Attraction | String | Name of the event added by the user to the planned events
 | date | Date | The date that the event takes place |
+| userdate | String | the date inputed by the user in any format that the user wishes |
 | ownerID | Pointer to User object | Points to the ID of the User that owns this
 | location | String | The address where the event takes place |
 | genre | String | What type of event this is |
