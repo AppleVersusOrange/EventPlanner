@@ -10,6 +10,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,15 +39,21 @@ public class ScheduleFragment extends Fragment {
 
     SwipeRefreshLayout swipeContainer;
 
+
+    private Button btnEventsPlanned;
+    private Button btnComposeList;
+
     public ScheduleFragment() {
 
     }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
-        View eventsplanned = inflater.inflate(R.layout.fragment_schedule, container, false);
+        return inflater.inflate(R.layout.fragment_schedule, container, false);
 
-        Button btnEventPlanned = (Button) eventsplanned.findViewById(R.id.button1);
+        //View eventsplanned = inflater.inflate(R.layout.fragment_schedule, container, false);
+        /*
+        Button btnEventPlanned = (Button) eventsplanned.findViewById(R.id.EPlanBtn);
         btnEventPlanned.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View view){
@@ -61,6 +68,8 @@ public class ScheduleFragment extends Fragment {
         });
 
         return eventsplanned;
+
+         */
     }
 
     @Override
@@ -85,6 +94,38 @@ public class ScheduleFragment extends Fragment {
         rvScheduleLists.setAdapter(scheduleListAdapter);
         rvScheduleLists.setLayoutManager(new LinearLayoutManager(getContext()));
         queryScheduleLists();
+
+
+
+        btnEventsPlanned = view.findViewById(R.id.EPlanBtn);
+        //following comment stops the app from working: work on floating button implementation
+        //btnComposeList = view.findViewById(R.id.floatingActionButton1);
+        btnEventsPlanned.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new EventPlannedFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        //currently breaks the app b/c need an implementation for FloatingActioButton
+        /*
+        btnComposeList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new ListCompose();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+         */
 
     }
     protected void queryScheduleLists() {

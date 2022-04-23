@@ -24,7 +24,7 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/EPlanBtn"
         android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -32,7 +32,7 @@
         android:text="View MyEvents" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
+        android:id="@+id/floatingActionButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
