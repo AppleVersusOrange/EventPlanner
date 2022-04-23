@@ -17,7 +17,7 @@ import java.util.List;
 
 public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdapter.ViewHolder>{
     private Context context;
-    private List<EventsPlanned> lists;
+    private List<EventsPlanned>lists;
 
     public EventsPlannedAdapter(Context context, List<EventsPlanned> lists){
         this.context = context;

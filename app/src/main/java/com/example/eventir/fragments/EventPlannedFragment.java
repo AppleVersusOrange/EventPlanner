@@ -85,7 +85,9 @@ public class EventPlannedFragment extends Fragment {
 
                 for(EventsPlanned event : events){
                     Log.i(TAG, "EVENT: " + event.getAttraction() + ", GENRE:  " + event.getGenre() + ", DATE: " + event.getUserDate() + ", username: " + event.getUser().getUsername());
+                    //Log.d(TAG, "EVENT: " + event.getAttraction() + " username: " + event.getUser().getUsername());
                 }
+
 
                 adapter.clear();
 
