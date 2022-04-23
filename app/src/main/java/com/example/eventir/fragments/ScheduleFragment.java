@@ -56,6 +56,7 @@ public class ScheduleFragment extends Fragment {
                 transaction.replace(R.id.flContainer, fragment);  //main -> schedule -> eventplanned
                 transaction.addToBackStack(null);
                 transaction.commit();
+
             }
         });
 
