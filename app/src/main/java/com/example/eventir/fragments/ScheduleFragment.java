@@ -46,7 +46,7 @@ public class ScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View eventsplanned = inflater.inflate(R.layout.fragment_schedule, container, false);
 
-        Button btnEventPlanned = (Button) eventsplanned.findViewById(R.id.button2);
+        Button btnEventPlanned = (Button) eventsplanned.findViewById(R.id.button1);
         btnEventPlanned.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View view){

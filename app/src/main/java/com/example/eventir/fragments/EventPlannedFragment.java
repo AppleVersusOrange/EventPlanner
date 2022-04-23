@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -73,6 +74,7 @@ public class EventPlannedFragment extends Fragment {
         ParseQuery<EventsPlanned> query = ParseQuery.getQuery(EventsPlanned.class);
         query.whereEqualTo("ownerID", currentUser);
         query.include(EventsPlanned.KEY_OWNERID);
+        query.include(EventsPlanned.KEY_EVENT_TITLE);
         query.setLimit(20);
         query.addDescendingOrder(EventsPlanned.KEY_CREATED_DATE);
         query.findInBackground(new FindCallback<EventsPlanned>() {
@@ -84,8 +86,8 @@ public class EventPlannedFragment extends Fragment {
                 }
 
                 for(EventsPlanned event : events){
-                    Log.i(TAG, "EVENT: " + event.getAttraction() + ", GENRE:  " + event.getGenre() + ", DATE: " + event.getUserDate() + ", username: " + event.getUser().getUsername());
-                    //Log.d(TAG, "EVENT: " + event.getAttraction() + " username: " + event.getUser().getUsername());
+                    //Log.i(TAG, "EVENT: " + event.getAttraction() + ", GENRE:  " + event.getGenre() + ", DATE: " + event.getUserDate() + ", username: " + event.getUser().getUsername());
+                    Log.i(TAG, "EVENT: " + event.getAttraction() + " username: " + event.getUser().getUsername());
                 }
 
 
