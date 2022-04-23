@@ -5,11 +5,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -36,6 +39,9 @@ public class EventPlannedFragment extends Fragment {
     protected List<EventsPlanned> listofEventsplannedlists;
 
     SwipeRefreshLayout swipeContainer;
+
+    private Button btnScheduleLists;
+    private Button btnComposeList;
 
     public EventPlannedFragment(){
 
@@ -67,6 +73,21 @@ public class EventPlannedFragment extends Fragment {
         rvEventsPlanned.setAdapter(adapter);
         rvEventsPlanned.setLayoutManager(new LinearLayoutManager(getContext()));
         queryEventLists();
+
+        btnScheduleLists = view.findViewById(R.id.SListsBtn);
+        //following comment stops the app from working: work on floating button implementation
+        //btnComposeList = view.findViewById(R.id.floatingActionButton1);
+        btnScheduleLists.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new ScheduleFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);     //main->eventplanned->schedulefragment
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
     }
 
     private void queryEventLists() {
