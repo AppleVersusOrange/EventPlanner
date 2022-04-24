@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.example.eventir.R;
@@ -58,5 +59,19 @@ public class EventDetailFragment extends Fragment {
         Glide.with(getContext())
                 .load(event.imageUrl)
                 .into(ivEventPic);
+
+        tvAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new MapFragment();
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("Event",  Parcels.wrap(event));
+                fragment.setArguments(bundle);
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.flContainer, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
     }
 }
