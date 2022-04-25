@@ -16,8 +16,8 @@ public class Events {
         public String genre;
         public String venue;
         public String address;
-        public int longitude;
-        public int latitude;
+        public Double longitude;
+        public Double latitude;
 
         public Events() {
         }
@@ -37,8 +37,8 @@ public class Events {
             event.address = event.address + " " + state.getString("name");
 
             JSONObject location = venueObject.getJSONObject("location");
-            event.longitude = location.getInt("longitude");
-            event.latitude = location.getInt("latitude");
+            event.longitude = location.getDouble("longitude");
+            event.latitude = location.getDouble("latitude");
 
             event.attraction = jsonObject.getString("name");
 
