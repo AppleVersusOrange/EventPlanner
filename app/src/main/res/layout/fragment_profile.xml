@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profileContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrimary">
 
     <ImageView
         android:id="@+id/ivProfilePic"
@@ -22,6 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:text="Username"
+        android:textColor="@color/textPrimary"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -32,6 +34,7 @@
         android:layout_below="@+id/tvUsername"
         android:layout_centerInParent="true"
         android:layout_marginTop="60dp"
+        android:background="@color/button1"
         android:text="View Friends List"
         android:textSize="18sp"
         app:cornerRadius="5dp" />
@@ -43,6 +46,7 @@
         android:layout_below="@+id/btnFriendList"
         android:layout_centerInParent="true"
         android:layout_marginTop="40dp"
+        android:background="@color/button2"
         android:text="Find Events"
         android:textSize="18sp"
         app:cornerRadius="5dp" />
@@ -54,6 +58,7 @@
         android:layout_below="@+id/btnFindEvents"
         android:layout_centerInParent="true"
         android:layout_marginTop="40dp"
+        android:background="@color/backgroundSecondary"
         android:text="Logout"
         android:textSize="18sp"
         app:cornerRadius="5dp" />

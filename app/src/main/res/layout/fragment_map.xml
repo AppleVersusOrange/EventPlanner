@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrimary">
 
     <ImageView
         android:id="@+id/ivVenuePic"
@@ -23,6 +24,8 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="22dp"
         android:layout_toEndOf="@+id/ivVenuePic"
+        android:textColor="@color/textPrimary"
+        android:textSize="@dimen/title_font"
         tools:text="Stone Factory" />
 
     <TextView
@@ -33,12 +36,15 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="7dp"
         android:layout_toEndOf="@+id/ivVenuePic"
+        android:paddingBottom="4dp"
+        android:textColor="@color/textSecondary"
+        android:textSize="@dimen/text_font"
         tools:text="153 Main Avenue" />
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mvMap"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/ivVenuePic"
-        android:layout_marginTop="22dp" />
+        android:layout_below="@+id/tvAddressM"
+        android:layout_marginTop="10dp" />
 </RelativeLayout>

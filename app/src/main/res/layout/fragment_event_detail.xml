@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundPrimary"
     android:padding="5dp">
 
     <ImageView
@@ -15,55 +16,75 @@
         android:layout_marginTop="86dp"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/tvEventDate"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivEventPic"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginTop="20dp"
-        tools:text="10/5/22" />
+        android:layout_marginTop="36dp"
+        android:background="@color/backgroundSecondary"
+        android:padding="5dp">
 
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvGenre"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="12dp"
-        tools:text="18 Shore Ave" />
+        <TextView
+            android:id="@+id/tvEventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:textColor="@color/textSecondary"
+            android:textSize="@dimen/text_font"
+            tools:text="10/5/22" />
 
-    <TextView
-        android:id="@+id/tvGenre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvEventTitle"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="11dp"
-        tools:text="Genre: sports" />
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvGenre"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/button2"
+            android:textSize="@dimen/text_font"
+            tools:text="18 Shore Ave" />
 
-    <TextView
-        android:id="@+id/tvVenueName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvEventDate"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        tools:text="Garden Center" />
+        <TextView
+            android:id="@+id/tvGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEventTitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="11dp"
+            android:textColor="@color/textSecondary"
+            android:textSize="@dimen/text_font"
+            tools:text="Genre: sports" />
 
-    <TextView
-        android:id="@+id/tvEventTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvVenueName"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="9dp"
-        tools:text="music fest" />
+        <TextView
+            android:id="@+id/tvVenueName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEventDate"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/title_font"
+            android:textStyle="bold"
+            tools:text="Garden Center" />
 
+        <TextView
+            android:id="@+id/tvEventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvVenueName"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="9dp"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/title_font"
+            android:textStyle="bold"
+            tools:text="music fest" />
+    </RelativeLayout>
 </RelativeLayout>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/backgroundSecondary">
 
     <ImageView
         android:id="@+id/ivFriendPic"
@@ -26,6 +27,7 @@
         android:layout_toEndOf="@+id/ivFriendPic"
         android:text="Username"
         android:textAllCaps="false"
+        android:textColor="@color/textPrimary"
         android:textSize="30sp"
         android:textStyle="bold" />
 </RelativeLayout>
