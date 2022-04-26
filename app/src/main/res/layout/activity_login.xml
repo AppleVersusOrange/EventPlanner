@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.LoginActivity">
+    tools:context=".activities.LoginActivity"
+    android:background="@color/backgroundPrimary">
 
     <EditText
         android:id="@+id/etUsername"
@@ -13,8 +14,13 @@
         android:layout_above="@+id/etPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
+        android:background="@color/backgroundSecondary"
         android:hint="Enter Username"
         android:minHeight="48dp"
+        android:singleLine="true"
+        android:textColor="@color/textPrimary"
+        android:textColorHighlight="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
         android:textSize="16sp" />
 
     <EditText
@@ -24,9 +30,14 @@
         android:layout_above="@+id/btnLogin"
         android:layout_centerInParent="true"
         android:layout_marginBottom="20dp"
+        android:background="@color/backgroundSecondary"
         android:hint="Enter Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:singleLine="true"
+        android:textColor="@color/textPrimary"
+        android:textColorHighlight="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
         android:textSize="16sp" />
 
     <Button
@@ -35,7 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_weight="1"
+        android:background="@color/button1"
         android:text="Login"
+        android:textColor="@color/black"
         app:cornerRadius="5dp" />
 
     <Button
@@ -45,6 +58,17 @@
         android:layout_below="@+id/btnLogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+        android:background="@color/button2"
         android:text="Register"
+        android:textColor="@color/black"
         app:cornerRadius="5dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/eventir" />
 </RelativeLayout>

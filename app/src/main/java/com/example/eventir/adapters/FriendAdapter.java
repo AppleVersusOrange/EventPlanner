@@ -18,6 +18,8 @@ import com.parse.ParseUser;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder> {
 
     private Context context;
@@ -73,7 +75,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
             tvFriendName.setText(friend.getUsername());
             ParseFile image = friend.getParseFile("profilePicture");
             if(image != null){
-                Glide.with(context).load(friend.getParseFile("profilePicture").getUrl()).into(ivFriendPic);
+                Glide.with(context).load(friend.getParseFile("profilePicture").getUrl()).transform(new CropCircleTransformation()).into(ivFriendPic);
             }
         }
     }

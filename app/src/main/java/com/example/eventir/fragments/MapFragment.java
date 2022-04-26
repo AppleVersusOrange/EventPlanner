@@ -22,6 +22,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.parceler.Parcels;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 public class MapFragment extends Fragment implements OnMapReadyCallback {
     private Events event;
     private TextView tvVenueNameM;
@@ -62,6 +64,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         Glide.with(getContext())
                 .load(event.imageUrl)
+                .transform(new CropCircleTransformation())
                 .into(ivVenuePic);
     }
 

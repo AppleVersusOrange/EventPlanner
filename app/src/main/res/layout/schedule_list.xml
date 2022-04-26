@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background_item_event"
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/tvUserName"
@@ -13,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textPrimary"
         tools:text="user goes here" />
 
     <TextView
@@ -20,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:textColor="@color/textSecondary"
         tools:text="sample description" />
 
 

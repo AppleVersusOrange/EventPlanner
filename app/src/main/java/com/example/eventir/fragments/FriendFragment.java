@@ -21,6 +21,8 @@ import com.parse.ParseUser;
 
 import org.parceler.Parcels;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 
 public class FriendFragment extends Fragment {
 
@@ -51,7 +53,7 @@ public class FriendFragment extends Fragment {
         if (bundle != null) {
             friend = Parcels.unwrap(bundle.getParcelable("Friend"));
         }
-        Glide.with(getContext()).load(friend.getParseFile("profilePicture").getUrl()).into(ivFriendPicture);
+        Glide.with(getContext()).load(friend.getParseFile("profilePicture").getUrl()).transform(new CropCircleTransformation()).into(ivFriendPicture);
         tvFriendUser.setText(friend.getUsername());
         btnAddFriend.setOnClickListener(new View.OnClickListener() {
             @Override
