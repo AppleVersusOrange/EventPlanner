@@ -7,6 +7,7 @@
 2. [Schema](#Schema)
 4. [Milestone-1](#Milestone-1)
 5. [Milestone-2](#Milestone-2)
+6. [Milestone-3](#Milestone-3)
 
 ## Overview
 ### Description
@@ -258,6 +259,30 @@ User Profile Page.
 User can view/edit Settings.
 
 <img src='Profile_Settings.gif' width='250'> <br>
+
+ ## Milestone-3
+    
+ **completed user stories**
+ 
+[x] Styling. 
+
+[x] User can Add/view friends.
+
+[x] Event Location using Google Maps.
+
+**incomplete user stories**
+
+[ ] User can add events to the schedule.
+
+**GIF Walkthrough**
+
+Styling.
+
+<img src='http://g.recordit.co/bEqIuXjQQ1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Event Location using Google Maps.
+
+<img src='http://g.recordit.co/bEqIuXjQQ1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
     
     
