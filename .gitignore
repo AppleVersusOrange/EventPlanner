@@ -44,3 +44,4 @@ local.properties
 
 apikey.properties
 
+app/src/main/res/values/secrets.xml

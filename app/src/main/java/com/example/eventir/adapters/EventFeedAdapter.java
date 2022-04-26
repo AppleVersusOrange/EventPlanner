@@ -94,6 +94,7 @@ public class EventFeedAdapter extends RecyclerView.Adapter<EventFeedAdapter.View
 
             Glide.with(context)
                     .load(events.imageUrl)
+                    .transform(new CropCircleTransformation())
                     .into(ivEventPic);
         }
     }

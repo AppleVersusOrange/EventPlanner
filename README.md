@@ -7,6 +7,7 @@
 2. [Schema](#Schema)
 4. [Milestone-1](#Milestone-1)
 5. [Milestone-2](#Milestone-2)
+6. [Milestone-3](#Milestone-3)
 
 ## Overview
 ### Description
@@ -136,7 +137,19 @@ Event:
 | venue | String | The venue that the event will be held at |
 | date | Date | The date that the event takes place |
 
+Event (back4app): 
 
+| Property | Type | Description |
+| :---    | :-- |  :---      |
+| objectId | String | Unique ID for each event (default field) |
+| Attraction | String | Name of the event added by the user to the planned events
+| date | Date | The date that the event takes place |
+| userdate | String | the date inputed by the user in any format that the user wishes |
+| ownerID | Pointer to User object | Points to the ID of the User that owns this
+| location | String | The address where the event takes place |
+| genre | String | What type of event this is |
+| image | File | Image that previews the event |
+| venue | String | The venue that the event will be held at |
 
 Schedule:
 
@@ -246,6 +259,30 @@ User Profile Page.
 User can view/edit Settings.
 
 <img src='Profile_Settings.gif' width='250'> <br>
+
+ ## Milestone-3
+    
+ **completed user stories**
+ 
+[x] Styling. 
+
+[x] User can Add/view friends.
+
+[x] Event Location using Google Maps.
+
+**incomplete user stories**
+
+[ ] User can add events to the schedule.
+
+**GIF Walkthrough**
+
+Styling.
+
+<img src='http://g.recordit.co/dKnyDK1Uvi.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Event Location using Google Maps.
+
+<img src='http://g.recordit.co/jaAoNNzd1p.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
     
     

@@ -19,6 +19,8 @@ import com.example.eventir.R;
 import com.example.eventir.activities.LoginActivity;
 import com.parse.ParseUser;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 public class ProfileFragment extends Fragment {
 
     public static final String TAG = "ProfileFragment";
@@ -46,11 +48,17 @@ public class ProfileFragment extends Fragment {
         btnFindEvents = view.findViewById(R.id.btnFindEvents);
         btnLogout = view.findViewById(R.id.btnLogout);
         tvUsername.setText(ParseUser.getCurrentUser().getUsername());
-        Glide.with(getContext()).load(ParseUser.getCurrentUser().getParseFile("profilePicture").getUrl()).into(ivProfilePic);
+        Glide.with(getContext()).load(ParseUser.getCurrentUser().getParseFile("profilePicture").getUrl()).transform(new CropCircleTransformation()).into(ivProfilePic);
         btnFriendList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Friend List Button",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Friend List Button",Toast.LENGTH_SHORT).show();
+                Fragment fragment = new FriendListFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.flContainer,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
         btnFindEvents.setOnClickListener(new View.OnClickListener() {

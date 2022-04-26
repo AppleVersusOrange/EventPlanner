@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrimary">
 
     <TextView
         android:id="@+id/tvPublic"
@@ -11,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Make Profile Public?"
         android:textAlignment="viewStart"
+        android:textColor="@color/textPrimary"
         android:textSize="24sp"
         android:textStyle="bold"
         android:translationX="11dp"
@@ -25,6 +27,7 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="152dp"
         android:text="Set ZIP Code:"
+        android:textColor="@color/textPrimary"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -35,7 +38,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="45dp"
-        android:layout_toEndOf="@+id/tvPublic" />
+        android:layout_toEndOf="@+id/tvPublic"
+        android:buttonTint="@color/backgroundSecondary" />
 
     <EditText
         android:id="@+id/etZipcode"
@@ -45,6 +49,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="143dp"
         android:layout_toEndOf="@+id/tvZipcode"
+        android:backgroundTint="@color/backgroundSecondary"
+        android:textColor="@color/textSecondary"
         android:textSize="24sp"
         tools:text="07102" />
 
@@ -64,6 +70,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="550dp"
+        android:background="@color/button2"
         android:text="Confirm Changes"
         android:textSize="20sp" />
 
@@ -74,6 +81,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="260dp"
+        android:background="@color/button1"
         android:text="Take New Profile Picture"
         android:textSize="18sp" />
 
@@ -85,6 +93,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:text="Image Preview"
+        android:textColor="@color/textPrimary"
         android:textSize="20sp"
         android:textStyle="bold" />
 </RelativeLayout>
