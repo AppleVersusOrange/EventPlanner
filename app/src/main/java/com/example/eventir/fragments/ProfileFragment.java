@@ -50,7 +50,13 @@ public class ProfileFragment extends Fragment {
         btnFriendList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Friend List Button",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Friend List Button",Toast.LENGTH_SHORT).show();
+                Fragment fragment = new FriendListFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.flContainer,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
         btnFindEvents.setOnClickListener(new View.OnClickListener() {
