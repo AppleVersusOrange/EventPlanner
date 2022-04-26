@@ -284,6 +284,10 @@ Event Location using Google Maps.
 
 <img src='http://g.recordit.co/jaAoNNzd1p.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+Friend List.
+
+<img src='FriendList.gif' width='250'> <br>
+
     
     
 
