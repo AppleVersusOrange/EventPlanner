@@ -278,7 +278,7 @@ User can view/edit Settings.
 
 Styling.
 
-<img src='http://g.recordit.co/bEqIuXjQQ1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/dKnyDK1Uvi.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Event Location using Google Maps.
 
