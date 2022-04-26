@@ -19,6 +19,8 @@ import com.example.eventir.R;
 import com.example.eventir.activities.LoginActivity;
 import com.parse.ParseUser;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 public class ProfileFragment extends Fragment {
 
     public static final String TAG = "ProfileFragment";
@@ -46,7 +48,7 @@ public class ProfileFragment extends Fragment {
         btnFindEvents = view.findViewById(R.id.btnFindEvents);
         btnLogout = view.findViewById(R.id.btnLogout);
         tvUsername.setText(ParseUser.getCurrentUser().getUsername());
-        Glide.with(getContext()).load(ParseUser.getCurrentUser().getParseFile("profilePicture").getUrl()).into(ivProfilePic);
+        Glide.with(getContext()).load(ParseUser.getCurrentUser().getParseFile("profilePicture").getUrl()).transform(new CropCircleTransformation()).into(ivProfilePic);
         btnFriendList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

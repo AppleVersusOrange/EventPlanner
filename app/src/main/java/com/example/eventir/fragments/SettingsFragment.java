@@ -35,6 +35,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 public class SettingsFragment extends Fragment {
 
     public static final String TAG = "fragmentSettings";
@@ -66,7 +68,7 @@ public class SettingsFragment extends Fragment {
         btnConfirm = view.findViewById(R.id.btnConfirm);
         etZipcode.setText(ParseUser.getCurrentUser().get("ZIPcode").toString());
         //photoFile = ParseUser.getCurrentUser().getParseFile("profilePicture").getFile();
-        Glide.with(getContext()).load(ParseUser.getCurrentUser().getParseFile("profilePicture").getUrl()).into(ivNewPicture);
+        Glide.with(getContext()).load(ParseUser.getCurrentUser().getParseFile("profilePicture").getUrl()).transform(new CropCircleTransformation()).into(ivNewPicture);
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

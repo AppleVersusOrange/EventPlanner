@@ -16,6 +16,8 @@ import com.example.eventir.models.Events;
 
 import org.parceler.Parcels;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 public class EventDetailFragment extends Fragment {
     private Events event;
     private TextView tvEventTitle;
@@ -58,6 +60,7 @@ public class EventDetailFragment extends Fragment {
 
         Glide.with(getContext())
                 .load(event.imageUrl)
+                .transform(new CropCircleTransformation())
                 .into(ivEventPic);
 
         tvAddress.setOnClickListener(new View.OnClickListener() {
