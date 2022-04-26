@@ -79,7 +79,7 @@ public class FriendListFragment extends Fragment {
         //query.include(Friend.KEY_USERNAME);
         query.whereNotEqualTo("username", ParseUser.getCurrentUser().getUsername());
         //query.setLimit(20);
-        //query.whereEqualTo("visibility", true);
+        query.whereEqualTo("visibility", true);
         query.addDescendingOrder(Friend.KEY_CREATED);
         query.findInBackground(new FindCallback<ParseUser>() {
             @Override
