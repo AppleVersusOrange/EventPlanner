@@ -282,7 +282,7 @@ Styling.
 
 Event Location using Google Maps.
 
-<img src='http://g.recordit.co/bEqIuXjQQ1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/jaAoNNzd1p.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
     
     
