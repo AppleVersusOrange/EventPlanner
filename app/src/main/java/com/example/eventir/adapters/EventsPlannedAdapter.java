@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eventir.R;
 import com.example.eventir.models.EventsPlanned;
-import com.example.eventir.models.ScheduleList;
 
 import java.util.List;
 

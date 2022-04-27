@@ -16,8 +16,7 @@
         android:layout_marginRight="20dp"
         android:hint="Title"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:inputType="text"/>
+        android:textColorHint="#FFFFFF"/>
 
     <EditText
         android:id="@+id/etEventDate"
@@ -28,8 +27,7 @@
         android:layout_marginRight="20dp"
         android:hint="Date"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:inputType="text"/>
+        android:textColorHint="#FFFFFF" />
 
     <EditText
         android:id="@+id/etGenre"
@@ -40,8 +38,7 @@
         android:layout_marginRight="20dp"
         android:hint="Genre"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:inputType="text"/>
+        android:textColorHint="#FFFFFF" />
 
     <Button
         android:id="@+id/btnLogOut"

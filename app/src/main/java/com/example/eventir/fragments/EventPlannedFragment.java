@@ -112,6 +112,8 @@ public class EventPlannedFragment extends Fragment {
         query.whereEqualTo("ownerID", currentUser);
         query.include(EventsPlanned.KEY_OWNERID);
         query.include(EventsPlanned.KEY_EVENT_TITLE);
+        query.include(EventsPlanned.KEY_EVENT_DATE);
+        query.include(EventsPlanned.KEY_GENRE);
         query.setLimit(20);
         query.addDescendingOrder(EventsPlanned.KEY_CREATED_DATE);
         query.findInBackground(new FindCallback<EventsPlanned>() {
@@ -123,8 +125,8 @@ public class EventPlannedFragment extends Fragment {
                 }
 
                 for(EventsPlanned event : events){
-                    //Log.i(TAG, "EVENT: " + event.getAttraction() + ", GENRE:  " + event.getGenre() + ", DATE: " + event.getUserDate() + ", username: " + event.getUser().getUsername());
-                    Log.i(TAG, "EVENT: " + event.getAttraction() + " username: " + event.getUser().getUsername());
+                    Log.i(TAG, "EVENT: " + event.getAttraction() + ", GENRE:  " + event.getGenre() + ", DATE: " + event.getUserDate() + ", username: " + event.getUser().getUsername());
+                    //Log.i(TAG, "EVENT: " + event.getAttraction() + " username: " + event.getUser().getUsername());
                 }
 
 
