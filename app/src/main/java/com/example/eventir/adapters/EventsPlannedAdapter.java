@@ -43,6 +43,7 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
     class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tvEventTitle;
+        private TextView tvLocation;
         private TextView tvEventDate;
         private TextView tvGenre;
         private TextView tvUsername;
@@ -52,11 +53,15 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
 
             tvEventTitle = itemView.findViewById(R.id.tvEventTitle);
 
+            tvLocation = itemView.findViewById(R.id.tvLocation);
+
             tvEventDate= itemView.findViewById(R.id.tvEventDate);
 
             tvGenre = itemView.findViewById(R.id.tvGenre);
 
             tvUsername = itemView.findViewById(R.id.tvUserName);
+
+
 
         }
 
@@ -64,6 +69,7 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
             //Bind event data to view elements
             tvUsername.setText(event.getUser().getUsername());
             tvEventTitle.setText(event.getAttraction());
+            tvLocation.setText(event.getLocation());
             tvEventDate.setText(event.getUserDate());
             tvGenre.setText(event.getGenre());
         }

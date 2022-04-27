@@ -28,6 +28,7 @@ public class EventPlannedComposeFragment extends Fragment {
     public EditText etEventTitle;
     public EditText etEventDate;
     public EditText etGenre;
+    public EditText etLocation;
     private Button btnSubmit;
     private Button btnLogout;
 
@@ -66,21 +67,32 @@ public class EventPlannedComposeFragment extends Fragment {
                 String event_title = etEventTitle.getText().toString();
                 String event_date = etEventDate.getText().toString();
                 String event_genre= etGenre.getText().toString();
+                String event_location = etLocation.getText().toString();
 
+                /*
                 if (event_title.isEmpty()) {
-                    Toast.makeText(getContext(), "Event needs a title", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Event title required", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                */
+                if (event_location.isEmpty()) {
+                    Toast.makeText(getContext(), "Event location required", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                /*
                 if (event_date.isEmpty()) {
-                    Toast.makeText(getContext(), "Event needs a date", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Event date required", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                */
+                 /*
                 if (event_genre.isEmpty()) {
-                    Toast.makeText(getContext(), "Event Genre required", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Event genre required", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                */
                 ParseUser currentUser = ParseUser.getCurrentUser();
-                saveEvent(event_title, event_date, event_genre, currentUser);
+                saveEvent(event_title, event_location, event_date, event_genre, currentUser);
             }
         });
 
@@ -95,9 +107,10 @@ public class EventPlannedComposeFragment extends Fragment {
     }
 
 
-    private void saveEvent(String event_title, String event_date, String event_genre ,ParseUser currentUser) {                  //private initially
+    private void saveEvent(String event_title, String event_location, String event_date, String event_genre ,ParseUser currentUser) {                  //private initially
         EventsPlanned event = new EventsPlanned();
         event.setAttraction(event_title);
+        event.setLocation(event_location);
         event.setUserDate(event_date);
         event.setGenre(event_genre);
         event.setUser(currentUser);
@@ -114,6 +127,7 @@ public class EventPlannedComposeFragment extends Fragment {
                 etEventTitle.setText("");
                 etEventDate.setText("");
                 etGenre.setText("");
+                etLocation.setText("");
 
             }
         });
