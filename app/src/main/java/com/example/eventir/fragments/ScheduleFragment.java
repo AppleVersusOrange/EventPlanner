@@ -19,6 +19,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.example.eventir.R;
 import com.example.eventir.models.ScheduleList;
 import com.example.eventir.adapters.ScheduleListsAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -42,6 +43,7 @@ public class ScheduleFragment extends Fragment {
 
     private Button btnEventsPlanned;
     private Button btnComposeList;
+    private FloatingActionButton fab;
 
     public ScheduleFragment() {
 
@@ -126,6 +128,18 @@ public class ScheduleFragment extends Fragment {
             }
         });
          */
+        fab = view.findViewById(R.id.floatingActionButton1);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new ListCompose();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
     }
     protected void queryScheduleLists() {

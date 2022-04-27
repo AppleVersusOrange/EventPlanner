@@ -21,6 +21,7 @@ import com.example.eventir.R;
 import com.example.eventir.adapters.EventsPlannedAdapter;
 import com.example.eventir.models.EventsPlanned;
 import com.example.eventir.models.ScheduleList;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -42,6 +43,7 @@ public class EventPlannedFragment extends Fragment {
 
     private Button btnScheduleLists;
     private Button btnComposeList;
+    private FloatingActionButton fab;
 
     public EventPlannedFragment(){
 
@@ -88,6 +90,20 @@ public class EventPlannedFragment extends Fragment {
                 transaction.commit();
             }
         });
+
+        fab = view.findViewById(R.id.floatingActionButton2);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new EventPlannedComposeFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
     }
 
     private void queryEventLists() {

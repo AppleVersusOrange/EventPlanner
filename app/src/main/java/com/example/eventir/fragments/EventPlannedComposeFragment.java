@@ -71,6 +71,7 @@ public class EventPlannedComposeFragment extends Fragment {
                     Toast.makeText(getContext(), "Event needs a title", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                /*
                 if (event_date.isEmpty()) {
                     Toast.makeText(getContext(), "Event needs a date", Toast.LENGTH_SHORT).show();
                     return;
@@ -79,6 +80,8 @@ public class EventPlannedComposeFragment extends Fragment {
                     Toast.makeText(getContext(), "Event Genre required", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                */
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 saveEvent(event_title, event_date, event_genre, currentUser);
             }
