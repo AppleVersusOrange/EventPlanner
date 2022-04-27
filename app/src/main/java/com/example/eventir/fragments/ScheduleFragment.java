@@ -5,10 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -28,7 +31,7 @@ public class ScheduleFragment extends Fragment {
 
     public static final String TAG = "ScheduleList";
 
-    protected ScheduleListsAdapter adapter;
+    protected ScheduleListsAdapter scheduleListAdapter;
 
     private RecyclerView rvScheduleLists;
 
@@ -36,13 +39,37 @@ public class ScheduleFragment extends Fragment {
 
     SwipeRefreshLayout swipeContainer;
 
+
+    private Button btnEventsPlanned;
+    private Button btnComposeList;
+
     public ScheduleFragment() {
 
     }
-
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         return inflater.inflate(R.layout.fragment_schedule, container, false);
+
+        //View eventsplanned = inflater.inflate(R.layout.fragment_schedule, container, false);
+        /*
+        Button btnEventPlanned = (Button) eventsplanned.findViewById(R.id.EPlanBtn);
+        btnEventPlanned.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View view){
+                Fragment fragment = new EventPlannedFragment();
+
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.flContainer, fragment);  //main -> schedule -> eventplanned
+                transaction.addToBackStack(null);
+                transaction.commit();
+
+            }
+        });
+
+        return eventsplanned;
+
+         */
     }
 
     @Override
@@ -62,11 +89,44 @@ public class ScheduleFragment extends Fragment {
         rvScheduleLists = view.findViewById(R.id.rvScheduleLists);
 
         listofScheduleLists = new ArrayList<>();
-        adapter = new ScheduleListsAdapter(getContext(), listofScheduleLists);
+        scheduleListAdapter = new ScheduleListsAdapter(getContext(), listofScheduleLists);
 
-        rvScheduleLists.setAdapter(adapter);
+        rvScheduleLists.setAdapter(scheduleListAdapter);
         rvScheduleLists.setLayoutManager(new LinearLayoutManager(getContext()));
         queryScheduleLists();
+
+
+
+        btnEventsPlanned = view.findViewById(R.id.EPlanBtn);
+        //following comment stops the app from working: work on floating button implementation
+        //btnComposeList = view.findViewById(R.id.floatingActionButton1);
+        btnEventsPlanned.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new EventPlannedFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        //currently breaks the app b/c need an implementation for FloatingActioButton
+        /*
+        btnComposeList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new ListCompose();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+         */
+
     }
     protected void queryScheduleLists() {
         ParseUser currentUser = ParseUser.getCurrentUser();
@@ -87,11 +147,11 @@ public class ScheduleFragment extends Fragment {
                     Log.i(TAG, "POST: " + list.getDescription() + ", username: " + list.getUser().getUsername());
                 }
 
-                adapter.clear();
+                scheduleListAdapter.clear();
 
                 listofScheduleLists.addAll(lists);
 
-                adapter.notifyDataSetChanged();
+                scheduleListAdapter.notifyDataSetChanged();
 
                 swipeContainer.setRefreshing(false);
             }

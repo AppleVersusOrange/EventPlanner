@@ -4,14 +4,25 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ListCompose">
+    tools:context=".fragments.EventPlannedComposeFragment">
 
     <EditText
-        android:id="@+id/etDescription"
+        android:id="@+id/etEventTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Description"/>
+        android:hint="Title of Event"/>
+
+    <EditText
+        android:id="@+id/etEventDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date of Event"/>
+
+    <EditText
+        android:id="@+id/etGenre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event's Genre"/>
 
     <Button
         android:id="@+id/btnLogOut"
@@ -23,6 +34,5 @@
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"/>
-
+        android:text="Submit" />
 </LinearLayout>

@@ -10,6 +10,13 @@
     android:padding="5dp">
 
     <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="sample description" />
+
+    <TextView
         android:id="@+id/tvUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,14 +24,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/textPrimary"
         tools:text="user goes here" />
-
     <TextView
-        android:id="@+id/tvDescription"
+        android:id="@+id/tvDescription2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textColor="@color/textSecondary"
         tools:text="sample description" />
-
 
 </LinearLayout>

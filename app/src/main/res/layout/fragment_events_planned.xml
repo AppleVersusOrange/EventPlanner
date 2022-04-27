@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ScheduleFragment"
+    tools:context=".fragments.EventPlannedFragment"
     android:background="@color/backgroundPrimary">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -17,23 +17,24 @@
         android:padding="8dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvScheduleLists"
+            android:id="@+id/rvEventsPlanned"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="8dp" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+
     <Button
-        android:id="@+id/EPlanBtn"
+        android:id="@+id/SListsBtn"
         android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="View MyEvents" />
+        android:text="View MyLists" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton1"
+        android:id="@+id/floatingActionButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
