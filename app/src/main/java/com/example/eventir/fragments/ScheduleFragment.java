@@ -45,6 +45,8 @@ public class ScheduleFragment extends Fragment {
     private Button btnComposeList;
     private FloatingActionButton fab;
 
+
+
     public ScheduleFragment() {
 
     }
@@ -138,6 +140,14 @@ public class ScheduleFragment extends Fragment {
                 transaction.replace(R.id.flContainer,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
+            }
+        });
+
+        scheduleListAdapter.setOnItemLongClickListener(new ScheduleListsAdapter.OnItemLongClickListener() {
+            @Override
+            public void onItemLongClick(View itemView, int position) {
+                listofScheduleLists.remove(position);
+                scheduleListAdapter.notifyItemRemoved(position);
             }
         });
 

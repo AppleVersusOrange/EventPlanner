@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,16 @@ import java.util.List;
 public class ScheduleListsAdapter extends RecyclerView.Adapter<ScheduleListsAdapter.ViewHolder> {
     private Context context;
     private List<ScheduleList> lists;
+
+    public interface OnItemLongClickListener{
+        void onItemLongClick(View itemView, int position);
+    }
+
+    private OnItemLongClickListener lclistener;
+
+    public void setOnItemLongClickListener(OnItemLongClickListener lclistener){
+        this.lclistener = lclistener;
+    }
 
     public ScheduleListsAdapter(Context context, List<ScheduleList> lists) {
         this.context = context;
@@ -59,6 +70,14 @@ public class ScheduleListsAdapter extends RecyclerView.Adapter<ScheduleListsAdap
             //Bind post data to view elements
             tvUsername.setText(post.getUser().getUsername());
             tvDescription.setText(post.getDescription());
+
+            tvDescription.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    lclistener.onItemLongClick(itemView, getAdapterPosition());
+                    return true;
+                }
+            });
         }
     }
 
