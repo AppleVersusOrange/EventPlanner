@@ -28,7 +28,7 @@ public class EventPlannedComposeFragment extends Fragment {
     public EditText etEventTitle;
     public EditText etEventDate;
     public EditText etGenre;
-    public EditText etLocation;
+    public EditText etEventLocation;
     private Button btnSubmit;
     private Button btnLogout;
 
@@ -56,6 +56,7 @@ public class EventPlannedComposeFragment extends Fragment {
         etEventTitle = view.findViewById(R.id.etEventTitle);
         etEventDate = view.findViewById(R.id.etEventDate);
         etGenre = view.findViewById(R.id.etGenre);
+        etEventLocation = view.findViewById(R.id.etEventLocation);
 
         btnLogout = view.findViewById(R.id.btnLogOut);
         btnSubmit = view.findViewById(R.id.btnSubmit);
@@ -67,7 +68,7 @@ public class EventPlannedComposeFragment extends Fragment {
                 String event_title = etEventTitle.getText().toString();
                 String event_date = etEventDate.getText().toString();
                 String event_genre= etGenre.getText().toString();
-                String event_location = etLocation.getText().toString();
+                String event_location = etEventLocation.getText().toString();
 
                 /*
                 if (event_title.isEmpty()) {
@@ -127,7 +128,7 @@ public class EventPlannedComposeFragment extends Fragment {
                 etEventTitle.setText("");
                 etEventDate.setText("");
                 etGenre.setText("");
-                etLocation.setText("");
+                etEventLocation.setText("");
 
             }
         });
