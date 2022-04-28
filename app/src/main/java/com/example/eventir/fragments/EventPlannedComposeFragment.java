@@ -33,7 +33,7 @@ public class EventPlannedComposeFragment extends Fragment {
     private Button btnLogout;
 
     public EventPlannedComposeFragment() {
-        // Required empty public constructor
+        // Required empty public constructorr
     }
 
     // The onCreateView method is called when Fragment should create its View object hierarchy,
