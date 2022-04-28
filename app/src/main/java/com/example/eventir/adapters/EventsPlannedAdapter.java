@@ -18,6 +18,16 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
     private Context context;
     private List<EventsPlanned>lists;
 
+    public interface OnItemLongClickListener{
+        void onItemLongClick(View itemView, int position);
+    }
+
+    private OnItemLongClickListener lclistener;
+
+    public void setOnItemLongClickListener(OnItemLongClickListener lclistener){
+        this.lclistener = lclistener;
+    }
+
     public EventsPlannedAdapter(Context context, List<EventsPlanned> lists){
         this.context = context;
         this.lists = lists;
@@ -72,6 +82,14 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
             tvLocation.setText(event.getLocation());
             tvEventDate.setText(event.getUserDate());
             tvGenre.setText(event.getGenre());
+
+            tvEventTitle.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    lclistener.onItemLongClick(itemView, getAdapterPosition());
+                    return true;
+                }
+            });
         }
     }
 

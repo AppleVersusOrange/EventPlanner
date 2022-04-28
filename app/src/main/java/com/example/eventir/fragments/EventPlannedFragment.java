@@ -104,6 +104,15 @@ public class EventPlannedFragment extends Fragment {
             }
         });
 
+        adapter.setOnItemLongClickListener(new EventsPlannedAdapter.OnItemLongClickListener(){
+            @Override
+            public void onItemLongClick(View itemView, int position){
+                listofEventsplannedlists.remove(position);
+                adapter.notifyItemRemoved(position);
+            }
+        });
+
+
     }
 
     private void queryEventLists() {
