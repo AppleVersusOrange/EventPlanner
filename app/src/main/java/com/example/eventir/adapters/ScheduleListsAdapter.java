@@ -64,12 +64,6 @@ public class ScheduleListsAdapter extends RecyclerView.Adapter<ScheduleListsAdap
             tvUsername = itemView.findViewById(R.id.tvUserName);
 
             tvDescription = itemView.findViewById(R.id.tvDescription);
-        }
-
-        public void bind(ScheduleList post) {
-            //Bind post data to view elements
-            tvUsername.setText(post.getUser().getUsername());
-            tvDescription.setText(post.getDescription());
 
             tvDescription.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -78,6 +72,14 @@ public class ScheduleListsAdapter extends RecyclerView.Adapter<ScheduleListsAdap
                     return true;
                 }
             });
+        }
+
+        public void bind(ScheduleList post) {
+            //Bind post data to view elements
+            tvUsername.setText(post.getUser().getUsername());
+            tvDescription.setText(post.getDescription());
+
+
         }
     }
 

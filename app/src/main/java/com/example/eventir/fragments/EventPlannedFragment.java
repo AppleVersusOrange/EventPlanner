@@ -109,8 +109,6 @@ public class EventPlannedFragment extends Fragment {
         adapter.setOnItemLongClickListener(new EventsPlannedAdapter.OnItemLongClickListener(){
             @Override
             public void onItemLongClick(View itemView, int position){
-                listofEventsplannedlists.remove(position);
-                adapter.notifyItemRemoved(position);
                 deleteEventPLanned(position);
             }
         });
@@ -174,6 +172,8 @@ public class EventPlannedFragment extends Fragment {
                             // checking if the error is null or not.
                             if (e == null) {
                                 // toast for delete.
+                                listofEventsplannedlists.remove(position);
+                                adapter.notifyItemRemoved(position);
                                 Toast.makeText(getContext(), "Event Deleted", Toast.LENGTH_SHORT).show();
                             } else {
                                 // toast for error

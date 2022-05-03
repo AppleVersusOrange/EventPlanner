@@ -71,6 +71,13 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
 
             tvUsername = itemView.findViewById(R.id.tvUserName);
 
+            tvEventTitle.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    lclistener.onItemLongClick(itemView, getAdapterPosition());
+                    return true;
+                }
+            });
 
 
         }
@@ -83,13 +90,7 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
             tvEventDate.setText(event.getUserDate());
             tvGenre.setText(event.getGenre());
 
-            tvEventTitle.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    lclistener.onItemLongClick(itemView, getAdapterPosition());
-                    return true;
-                }
-            });
+
         }
     }
 

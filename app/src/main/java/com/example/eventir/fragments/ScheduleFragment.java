@@ -149,8 +149,6 @@ public class ScheduleFragment extends Fragment {
         scheduleListAdapter.setOnItemLongClickListener(new ScheduleListsAdapter.OnItemLongClickListener() {
             @Override
             public void onItemLongClick(View itemView, int position) {
-                listofScheduleLists.remove(position);
-                scheduleListAdapter.notifyItemRemoved(position);
                 deleteScheduleList(position);
             }
 
@@ -193,6 +191,7 @@ public class ScheduleFragment extends Fragment {
         query.whereEqualTo("objectId", listofScheduleLists.get(position).getObjectId());
         System.out.println(position);
         System.out.print(listofScheduleLists.get(position).getObjectId());
+
         query.findInBackground(new FindCallback<ScheduleList>() {
             @Override
             public void done(List<ScheduleList> objects, ParseException e) {
@@ -203,6 +202,8 @@ public class ScheduleFragment extends Fragment {
                         public void done(ParseException e) {
                             // toast null if deleted
                             if (e == null) {
+                                listofScheduleLists.remove(position);
+                                scheduleListAdapter.notifyItemRemoved(position);
                                 Toast.makeText(getContext(), "Schedule Deleted", Toast.LENGTH_SHORT).show();
                             } else {
                                 // toast error
