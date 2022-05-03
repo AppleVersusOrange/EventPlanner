@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,8 +21,10 @@ import com.example.eventir.R;
 import com.example.eventir.models.ScheduleList;
 import com.example.eventir.adapters.ScheduleListsAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -148,7 +151,9 @@ public class ScheduleFragment extends Fragment {
             public void onItemLongClick(View itemView, int position) {
                 listofScheduleLists.remove(position);
                 scheduleListAdapter.notifyItemRemoved(position);
+                deleteScheduleList(position);
             }
+
         });
 
     }
@@ -180,6 +185,40 @@ public class ScheduleFragment extends Fragment {
                 swipeContainer.setRefreshing(false);
             }
         });
+    }
+    protected void deleteScheduleList(int position){
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        ParseQuery<ScheduleList> query = ParseQuery.getQuery("Event");
+
+        query.whereEqualTo("objectId", listofScheduleLists.get(position).getObjectId());
+
+        query.findInBackground(new FindCallback<ScheduleList>() {
+            @Override
+            public void done(List<ScheduleList> objects, ParseException e) {
+                if (e == null) {
+                    // on below line we are getting the first course and
+                    // calling a delete method to delete this course.
+                    listofScheduleLists.get(position).deleteInBackground(new DeleteCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            // inside done method checking if the error is null or not.
+                            if (e == null) {
+                                // if the error is not null then we are displaying a toast message and opening our home activity.
+                                Toast.makeText(getContext(), "Course Deleted..", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // if we get error we are displaying it in below line.
+                                Toast.makeText(getContext(), "Fail to delete course..", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    // if we don't get the data in our database then we are displaying below message.
+                    Toast.makeText(getContext(), "Fail to get the object..", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
     }
 
 }

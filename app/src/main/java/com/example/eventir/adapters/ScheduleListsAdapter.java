@@ -81,6 +81,8 @@ public class ScheduleListsAdapter extends RecyclerView.Adapter<ScheduleListsAdap
         }
     }
 
+
+
     // Clean all elements of the recycler
     public void clear() {
         lists.clear();

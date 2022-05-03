@@ -70,12 +70,12 @@ public class EventPlannedComposeFragment extends Fragment {
                 String event_genre= etGenre.getText().toString();
                 String event_location = etEventLocation.getText().toString();
 
-                /*
+
                 if (event_title.isEmpty()) {
                     Toast.makeText(getContext(), "Event title required", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                */
+
                 if (event_location.isEmpty()) {
                     Toast.makeText(getContext(), "Event location required", Toast.LENGTH_SHORT).show();
                     return;

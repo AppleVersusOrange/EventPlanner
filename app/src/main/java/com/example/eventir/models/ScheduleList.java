@@ -9,6 +9,7 @@ public class ScheduleList extends ParseObject {
     public static final String KEY_OWNERID = "ownerID";
     public static final String KEY_CREATED_DATE = "createdAt";               //optional for now: index of a schedule list
     public static final String KEY_SCHEDULENAME = "scheduleName";
+    public static final String KEY_OBJECTID = "objectId";
 
     //getter for name
     public String getDescription(){
@@ -18,6 +19,7 @@ public class ScheduleList extends ParseObject {
     public void setDescription(String description){
         put(KEY_SCHEDULENAME, description);      //put: associates key with description from Parser
     }
+    public String getObjectId() { return getString(KEY_OBJECTID); }
 
     //setter and getter for user associated with each schedule list reminder
     public ParseUser getUser(){
