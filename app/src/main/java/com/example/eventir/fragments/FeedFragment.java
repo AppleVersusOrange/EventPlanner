@@ -92,7 +92,6 @@ public class FeedFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 alGenre.get(i);
                 curGenre = alGenre.get(i);
-                eventFeedAdapter.clear();
                 retrieveEventFeed();
             }
 
