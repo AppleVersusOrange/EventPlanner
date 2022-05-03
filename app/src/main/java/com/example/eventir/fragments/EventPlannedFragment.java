@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import com.example.eventir.adapters.EventsPlannedAdapter;
 import com.example.eventir.models.EventsPlanned;
 import com.example.eventir.models.ScheduleList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -109,6 +111,7 @@ public class EventPlannedFragment extends Fragment {
             public void onItemLongClick(View itemView, int position){
                 listofEventsplannedlists.remove(position);
                 adapter.notifyItemRemoved(position);
+                deleteEventPLanned(position);
             }
         });
 
@@ -148,6 +151,40 @@ public class EventPlannedFragment extends Fragment {
 
                 swipeContainer.setRefreshing(false);
 
+            }
+        });
+
+    }
+
+    private void deleteEventPLanned(int position){
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        ParseQuery<EventsPlanned> query = ParseQuery.getQuery("Event");
+
+        query.whereEqualTo("objectId", listofEventsplannedlists.get(position).getObjectId());
+        System.out.println(position);
+        System.out.print(listofEventsplannedlists.get(position).getObjectId());
+        query.findInBackground(new FindCallback<EventsPlanned>() {
+            @Override
+            public void done(List<EventsPlanned> objects, ParseException e) {
+                if (e == null) {
+                    // delete event.
+                    listofEventsplannedlists.get(position).deleteInBackground(new DeleteCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            // checking if the error is null or not.
+                            if (e == null) {
+                                // toast for delete.
+                                Toast.makeText(getContext(), "Event Deleted", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // toast for error
+                                Toast.makeText(getContext(), "Fail to Delete Event", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    // toast for fail to get data
+                    Toast.makeText(getContext(), "Fail to get Data", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

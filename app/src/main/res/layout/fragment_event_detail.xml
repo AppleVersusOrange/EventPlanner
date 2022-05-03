@@ -16,6 +16,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <RelativeLayout
+        android:id="@+id/rlInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivEventPic"
@@ -86,4 +87,16 @@
             android:textStyle="bold"
             tools:text="music fest" />
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnAddEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlInfo"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp"
+        android:background="@color/button1"
+        android:text="Add Event"
+        android:textSize="18sp" />
+
 </RelativeLayout>

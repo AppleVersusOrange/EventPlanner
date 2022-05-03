@@ -188,32 +188,31 @@ public class ScheduleFragment extends Fragment {
     }
     protected void deleteScheduleList(int position){
         ParseUser currentUser = ParseUser.getCurrentUser();
-        ParseQuery<ScheduleList> query = ParseQuery.getQuery("Event");
+        ParseQuery<ScheduleList> query = ParseQuery.getQuery("Schedule");
 
         query.whereEqualTo("objectId", listofScheduleLists.get(position).getObjectId());
-
+        System.out.println(position);
+        System.out.print(listofScheduleLists.get(position).getObjectId());
         query.findInBackground(new FindCallback<ScheduleList>() {
             @Override
             public void done(List<ScheduleList> objects, ParseException e) {
                 if (e == null) {
-                    // on below line we are getting the first course and
-                    // calling a delete method to delete this course.
+                    // delete schedule list
                     listofScheduleLists.get(position).deleteInBackground(new DeleteCallback() {
                         @Override
                         public void done(ParseException e) {
-                            // inside done method checking if the error is null or not.
+                            // toast null if deleted
                             if (e == null) {
-                                // if the error is not null then we are displaying a toast message and opening our home activity.
-                                Toast.makeText(getContext(), "Course Deleted..", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Schedule Deleted", Toast.LENGTH_SHORT).show();
                             } else {
-                                // if we get error we are displaying it in below line.
-                                Toast.makeText(getContext(), "Fail to delete course..", Toast.LENGTH_SHORT).show();
+                                // toast error
+                                Toast.makeText(getContext(), "Fail to Delete Schedule", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 } else {
-                    // if we don't get the data in our database then we are displaying below message.
-                    Toast.makeText(getContext(), "Fail to get the object..", Toast.LENGTH_SHORT).show();
+                    // toast can't get data
+                    Toast.makeText(getContext(), "Fail to get data", Toast.LENGTH_SHORT).show();
                 }
             }
         });
