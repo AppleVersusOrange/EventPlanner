@@ -6,6 +6,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -35,10 +39,14 @@ public class FeedFragment extends Fragment {
     private TicketMasterClient client;
     private ZipCodeClient ZipClient;
     private List<Events> events;
+    private Spinner spGenre;
     private RecyclerView rvEventFeed;
     private EventFeedAdapter eventFeedAdapter;
     public String latLong;
     public String zipCode;
+    private String[] genreList;
+    private ArrayList<String> alGenre = new ArrayList<String>();
+    private String curGenre;
 
 
 
@@ -54,8 +62,20 @@ public class FeedFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        alGenre.add("none");
+        alGenre.add("Sports");
+        alGenre.add("Music");
+        alGenre.add("Arts");
+        alGenre.add("Film");
 
         rvEventFeed = view.findViewById(R.id.rvEventFeed);
+        spGenre = view.findViewById(R.id.spGenre);
+
+        genreList = getResources().getStringArray(R.array.genres);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(), R.layout.dropdown_item, genreList);
+
+        spGenre.setAdapter(arrayAdapter);
+
 
         client = new TicketMasterClient();
         ZipClient = new ZipCodeClient();
@@ -64,8 +84,22 @@ public class FeedFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         rvEventFeed.setLayoutManager(linearLayoutManager);
         rvEventFeed.setAdapter(eventFeedAdapter);
-        retrieveEventFeed();
 
+
+
+        spGenre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                alGenre.get(i);
+                curGenre = alGenre.get(i);
+                retrieveEventFeed();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         eventFeedAdapter.setOnItemClickListener(new EventFeedAdapter.OnItemClickListener() {
             @Override
@@ -123,11 +157,11 @@ public class FeedFragment extends Fragment {
                     public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
                         Log.e(TAG, "Error in getting events." + response, throwable);
                     }
-                }, latLong);
+                }, latLong, curGenre);
             }
             @Override
             public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-                Log.e(TAG, "Error in getting LatLong." + response, throwable);
+                Log.i(TAG, "Error in getting LatLong." + response, throwable);
                 latLong = "40.40179,-73.98728";
 
                 client.getEvents(new JsonHttpResponseHandler() {
@@ -151,7 +185,7 @@ public class FeedFragment extends Fragment {
                     public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
                         Log.e(TAG, "Error in getting events." + response, throwable);
                     }
-                }, latLong);
+                }, latLong, curGenre);
             }
         }, zipCode);
 
