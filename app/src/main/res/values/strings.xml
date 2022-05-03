@@ -14,4 +14,11 @@
     <string name="back4app_client_key">vDMN5vBlN87JGWLhMnNxRVpAgg87dGtCZCfPpiAO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="genres">
+        <item>none</item>
+        <item>Sports</item>
+        <item>Music</item>
+        <item>Arts</item>
+        <item>Film</item>
+    </string-array>
 </resources>
