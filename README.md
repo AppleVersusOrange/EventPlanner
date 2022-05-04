@@ -271,9 +271,9 @@ User can view/edit Settings.
 
 [x] Event Location using Google Maps.
 
-**incomplete user stories**
+[x] User can add events to the schedule.
 
-[ ] User can add events to the schedule.
+<img src='http://g.recordit.co/xdfhRquHzQ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 **GIF Walkthrough**
 
@@ -302,3 +302,5 @@ Viewing friend's upcoming events.
 <img src='friend_events.gif' width='250'> <br>
 
 [x] deleting planned events/schedules.
+
+<img src='http://g.recordit.co/msOL21hpNo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
