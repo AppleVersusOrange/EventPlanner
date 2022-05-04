@@ -333,4 +333,4 @@ Viewing friend's upcoming events.
 
 Event Detail and map screens.
 
-<img src='http://g.recordit.co/zHkKqtxA0G.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/oPIVIPyLjo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
