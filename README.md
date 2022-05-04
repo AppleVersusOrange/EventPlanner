@@ -326,11 +326,27 @@ Viewing friend's upcoming events.
 <img src='http://g.recordit.co/DdM7xYe8Y2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Final Gifs
+
+Login/Registration.
+
+<img src='updated_login.gif' width='250'> <br>
  
- Event feed. 
+Event feed. 
 
 <img src='http://g.recordit.co/Jypsb9EXqa.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Event Detail and map screens.
 
 <img src='http://g.recordit.co/oPIVIPyLjo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Profile Screen.
+
+<img src='updated_profile.gif' width='250'> <br>
+
+Settings Screen.
+
+<img src='updated_settings.gif' width='250'> <br>
+
+Friend List.
+
+<img src='friend_events.gif' width='250'> <br>
