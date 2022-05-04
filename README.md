@@ -295,9 +295,9 @@ Friend List.
  
 [x] Event feed filter. 
 
-[x] viewing friend's recent events.
+Viewing friend's recent events.
 
-<img src='friend_events.gif' width='250> <br>
+<img src='friend_events.gif' width='250'> <br>
 
 [x] deleting planned events/schedules.
 
