@@ -295,7 +295,7 @@ Event Location using Google Maps.
 
 Friend List.
 
-<img src='FriendList.gif' width='250'> <br>
+<img src='friend_events.gif' width='250'> <br>
 
  ## Milestone-4
   
