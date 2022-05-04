@@ -295,7 +295,7 @@ Friend List.
  
 [x] Event feed filter. 
 
-Viewing friend's recent events.
+Viewing friend's upcoming events.
 
 <img src='friend_events.gif' width='250'> <br>
 
