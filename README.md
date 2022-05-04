@@ -9,7 +9,7 @@
 5. [Milestone-2](#Milestone-2)
 6. [Milestone-3](#Milestone-3)
 7. [Milestone-4](#Milestone-4)
-8. [Final_Gifs](#Final_Gifs)
+8. [Final Gifs](#Final Gifs)
 
 ## Overview
 ### Description
@@ -327,6 +327,10 @@ Viewing friend's upcoming events.
 
 ## Final_Gifs
  
- [x] Event feed. 
+ Event feed. 
+
+<img src='http://g.recordit.co/zHkKqtxA0G.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Event Detail and map screens.
 
 <img src='http://g.recordit.co/zHkKqtxA0G.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
