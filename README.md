@@ -245,7 +245,7 @@ here is a walkthrough of the completed stories.
 
 [x] User can add events to the schedule.
 
-<img src='http://http://g.recordit.co/ov4aERG06p.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/ov4aERG06p.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 **GIF Walkthrough**
 
