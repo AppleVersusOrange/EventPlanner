@@ -59,10 +59,12 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView ivFriendPic;
         private TextView tvFriendName;
+        private TextView tvYourFriend;
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             ivFriendPic = itemView.findViewById(R.id.ivFriendPic);
             tvFriendName = itemView.findViewById(R.id.tvFriendName);
+            tvYourFriend = itemView.findViewById(R.id.tvYourFriend);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -73,6 +75,12 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
 
         public void bind(ParseUser friend){
             tvFriendName.setText(friend.getUsername());
+            if(ParseUser.getCurrentUser().getList("friendList").contains(friend.getUsername())){
+                tvYourFriend.setVisibility(View.VISIBLE);
+            }
+            else{
+                tvYourFriend.setVisibility(View.INVISIBLE);
+            }
             ParseFile image = friend.getParseFile("profilePicture");
             if(image != null){
                 Glide.with(context).load(friend.getParseFile("profilePicture").getUrl()).transform(new CropCircleTransformation()).into(ivFriendPic);

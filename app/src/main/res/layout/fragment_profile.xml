@@ -35,9 +35,9 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="60dp"
         android:background="@color/button1"
-        android:text="View Friends List"
+        android:text="Find Other Users"
         android:textSize="18sp"
-        app:cornerRadius="5dp" />
+        app:cornerRadius="10dp" />
 
     <Button
         android:id="@+id/btnFindEvents"
