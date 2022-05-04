@@ -325,7 +325,7 @@ Viewing friend's upcoming events.
 
 <img src='http://g.recordit.co/DdM7xYe8Y2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-## Final_Gifs
+## Final Gifs
  
  Event feed. 
 
