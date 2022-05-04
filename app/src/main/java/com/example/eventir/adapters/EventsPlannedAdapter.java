@@ -17,6 +17,7 @@ import java.util.List;
 public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdapter.ViewHolder>{
     private Context context;
     private List<EventsPlanned>lists;
+    private OnItemClickListener listener;
 
     public interface OnItemLongClickListener{
         void onItemLongClick(View itemView, int position);
@@ -32,6 +33,9 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
         this.context = context;
         this.lists = lists;
     }
+    public interface OnItemClickListener {
+        void onItemClick(View itemView, int position);
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -45,6 +49,9 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
 
 
         holder.bind(list);
+    }
+    public void setOnItemClickListener(EventsPlannedAdapter.OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @Override

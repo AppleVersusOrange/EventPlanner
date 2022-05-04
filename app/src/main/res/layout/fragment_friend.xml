@@ -7,6 +7,17 @@
     tools:context=".fragments.FriendFragment">
 
 
+    <Button
+        android:id="@+id/btnRemoveFriend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvFriendUser"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@color/button2"
+        android:text="Remove Friend"
+        android:visibility="invisible" />
+
     <TextView
         android:id="@+id/tvFriendUser"
         android:layout_width="wrap_content"
@@ -36,4 +47,24 @@
         android:layout_marginTop="30dp"
         android:background="@color/button2"
         android:text="Add Friend" />
+
+    <TextView
+        android:id="@+id/tvUpcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnAddFriend"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:text="Username's Upcoming Events"
+        android:textColor="@color/textPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFriendEvents"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_below="@+id/tvUpcoming"
+        android:layout_marginTop="30dp" />
+
 </RelativeLayout>
