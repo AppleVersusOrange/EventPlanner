@@ -303,6 +303,9 @@ Viewing friend's upcoming events.
 
 [x] deleting planned events/schedules.
 
+[x] Long click on event will remove schedule list entry and event planned entry from the DB and recycler view.
+[x] User can add an event from the detail event screen directly to the event planned screen
+
 <img src='http://g.recordit.co/msOL21hpNo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='http://g.recordit.co/2wR3T3ekly.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
