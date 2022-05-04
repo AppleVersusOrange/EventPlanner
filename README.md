@@ -9,7 +9,7 @@
 5. [Milestone-2](#Milestone-2)
 6. [Milestone-3](#Milestone-3)
 7. [Milestone-4](#Milestone-4)
-8. [Final Gifs](#Final Gifs)
+8. [Final Gifs](#Final-Gifs)
 
 ## Overview
 ### Description
