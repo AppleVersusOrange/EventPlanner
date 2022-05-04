@@ -225,6 +225,8 @@ Schedule:
 
 [x] User can create/login to their account.
 
+<img src='updated_login.gif' width='250'> <br>
+
 [x] User can view what events they have planned.
     
 here is a walkthrough of the completed stories.
@@ -257,9 +259,11 @@ User can search Events in radius around them.
 
 User Profile Page.
 
+<img src='updated_profile.gif' width='250'> <br>
+
 User can view/edit Settings.
 
-<img src='Profile_Settings.gif' width='250'> <br>
+<img src='updated_settings.gif' width='250'> <br>
 
  ## Milestone-3
     
