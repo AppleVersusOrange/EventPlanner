@@ -19,13 +19,24 @@
         tools:text="music fest" />
 
     <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvGenre"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="1dp"
+        android:textColor="@color/textPrimary"
+        android:textSize="@dimen/title_font"
+        tools:text="event location" />
+
+    <TextView
         android:id="@+id/tvEventDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvEventTitle"
+        android:layout_below="@+id/tvLocation"
         android:layout_alignParentStart="true"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="3dp"
         android:textColor="@color/textSecondary"
         android:textSize="@dimen/text_font"
         tools:text="10/5/22" />
@@ -35,9 +46,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvEventTitle"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="3dp"
-        android:layout_toEndOf="@+id/tvEventDate"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="2dp"
         android:textColor="@color/textSecondary"
         android:textSize="@dimen/text_font"
         tools:text="Genre: sports" />
@@ -46,7 +57,7 @@
         android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvGenre"
+        android:layout_below="@+id/tvEventDate"
         android:layout_alignParentStart="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="2dp"

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eventir.R;
 import com.example.eventir.models.EventsPlanned;
-import com.example.eventir.models.ScheduleList;
 
 import java.util.List;
 
@@ -19,6 +18,16 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
     private Context context;
     private List<EventsPlanned>lists;
     private OnItemClickListener listener;
+
+    public interface OnItemLongClickListener{
+        void onItemLongClick(View itemView, int position);
+    }
+
+    private OnItemLongClickListener lclistener;
+
+    public void setOnItemLongClickListener(OnItemLongClickListener lclistener){
+        this.lclistener = lclistener;
+    }
 
     public EventsPlannedAdapter(Context context, List<EventsPlanned> lists){
         this.context = context;
@@ -51,6 +60,7 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
     class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tvEventTitle;
+        private TextView tvLocation;
         private TextView tvEventDate;
         private TextView tvGenre;
         private TextView tvUsername;
@@ -60,11 +70,22 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
 
             tvEventTitle = itemView.findViewById(R.id.tvEventTitle);
 
+            tvLocation = itemView.findViewById(R.id.tvLocation);
+
             tvEventDate= itemView.findViewById(R.id.tvEventDate);
 
             tvGenre = itemView.findViewById(R.id.tvGenre);
 
             tvUsername = itemView.findViewById(R.id.tvUserName);
+
+            tvEventTitle.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    lclistener.onItemLongClick(itemView, getAdapterPosition());
+                    return true;
+                }
+            });
+
 
         }
 
@@ -72,8 +93,11 @@ public class EventsPlannedAdapter extends RecyclerView.Adapter<EventsPlannedAdap
             //Bind event data to view elements
             tvUsername.setText(event.getUser().getUsername());
             tvEventTitle.setText(event.getAttraction());
+            tvLocation.setText(event.getLocation());
             tvEventDate.setText(event.getUserDate());
             tvGenre.setText(event.getGenre());
+
+
         }
     }
 

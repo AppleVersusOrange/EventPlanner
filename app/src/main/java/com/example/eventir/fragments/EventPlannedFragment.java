@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,8 @@ import com.example.eventir.R;
 import com.example.eventir.adapters.EventsPlannedAdapter;
 import com.example.eventir.models.EventsPlanned;
 import com.example.eventir.models.ScheduleList;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -42,6 +45,7 @@ public class EventPlannedFragment extends Fragment {
 
     private Button btnScheduleLists;
     private Button btnComposeList;
+    private FloatingActionButton fab;
 
     public EventPlannedFragment(){
 
@@ -88,6 +92,28 @@ public class EventPlannedFragment extends Fragment {
                 transaction.commit();
             }
         });
+
+        fab = view.findViewById(R.id.floatingActionButton2);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new EventPlannedComposeFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        adapter.setOnItemLongClickListener(new EventsPlannedAdapter.OnItemLongClickListener(){
+            @Override
+            public void onItemLongClick(View itemView, int position){
+                deleteEventPLanned(position);
+            }
+        });
+
+
     }
 
     private void queryEventLists() {
@@ -96,6 +122,9 @@ public class EventPlannedFragment extends Fragment {
         query.whereEqualTo("ownerID", currentUser);
         query.include(EventsPlanned.KEY_OWNERID);
         query.include(EventsPlanned.KEY_EVENT_TITLE);
+        query.include(EventsPlanned.KEY_EVENT_DATE);
+        query.include(EventsPlanned.KEY_GENRE);
+        query.include(EventsPlanned.KEY_EVENT_LOC);
         query.setLimit(20);
         query.addDescendingOrder(EventsPlanned.KEY_CREATED_DATE);
         query.findInBackground(new FindCallback<EventsPlanned>() {
@@ -107,8 +136,8 @@ public class EventPlannedFragment extends Fragment {
                 }
 
                 for(EventsPlanned event : events){
-                    //Log.i(TAG, "EVENT: " + event.getAttraction() + ", GENRE:  " + event.getGenre() + ", DATE: " + event.getUserDate() + ", username: " + event.getUser().getUsername());
-                    Log.i(TAG, "EVENT: " + event.getAttraction() + " username: " + event.getUser().getUsername());
+                    Log.i(TAG, "EVENT: " + event.getAttraction() + "LOCATION: " + event.getLocation() + ", GENRE:  " + event.getGenre() + ", DATE: " + event.getUserDate() + ", username: " + event.getUser().getUsername());
+                    //Log.i(TAG, "EVENT: " + event.getAttraction() + " username: " + event.getUser().getUsername());
                 }
 
 
@@ -120,6 +149,42 @@ public class EventPlannedFragment extends Fragment {
 
                 swipeContainer.setRefreshing(false);
 
+            }
+        });
+
+    }
+
+    private void deleteEventPLanned(int position){
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        ParseQuery<EventsPlanned> query = ParseQuery.getQuery("Event");
+
+        query.whereEqualTo("objectId", listofEventsplannedlists.get(position).getObjectId());
+        System.out.println(position);
+        System.out.print(listofEventsplannedlists.get(position).getObjectId());
+        query.findInBackground(new FindCallback<EventsPlanned>() {
+            @Override
+            public void done(List<EventsPlanned> objects, ParseException e) {
+                if (e == null) {
+                    // delete event.
+                    listofEventsplannedlists.get(position).deleteInBackground(new DeleteCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            // checking if the error is null or not.
+                            if (e == null) {
+                                // toast for delete.
+                                listofEventsplannedlists.remove(position);
+                                adapter.notifyItemRemoved(position);
+                                Toast.makeText(getContext(), "Event Deleted", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // toast for error
+                                Toast.makeText(getContext(), "Fail to Delete Event", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    // toast for fail to get data
+                    Toast.makeText(getContext(), "Fail to get Data", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

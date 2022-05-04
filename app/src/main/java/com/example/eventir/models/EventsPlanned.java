@@ -18,10 +18,16 @@ public class EventsPlanned extends ParseObject {
     public static final String KEY_GENRE = "genre";
     public static final String KEY_OWNERID = "ownerID";
     public static final String KEY_CREATED_DATE = "createdAt";
+    public static final String KEY_EVENT_LOC = "location";
+
 
     //setters
     public void setUser(ParseUser user){
         put(KEY_OWNERID,user);
+    }
+
+    public void setLocation(String location){
+        put(KEY_EVENT_LOC, location);      //put: associates key with description from Parser
     }
 
     public void setAttraction(String attraction){
@@ -37,6 +43,8 @@ public class EventsPlanned extends ParseObject {
     }
 
 
+
+
     //getters
     public ParseUser getUser(){
         return getParseUser(KEY_OWNERID);
@@ -44,6 +52,10 @@ public class EventsPlanned extends ParseObject {
 
     public String getAttraction(){
         return getString(KEY_EVENT_TITLE);
+    }
+
+    public String getLocation(){
+        return getString(KEY_EVENT_LOC);
     }
 
     public String getGenre(){

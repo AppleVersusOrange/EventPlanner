@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,8 +20,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.example.eventir.R;
 import com.example.eventir.models.ScheduleList;
 import com.example.eventir.adapters.ScheduleListsAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -42,6 +46,9 @@ public class ScheduleFragment extends Fragment {
 
     private Button btnEventsPlanned;
     private Button btnComposeList;
+    private FloatingActionButton fab;
+
+
 
     public ScheduleFragment() {
 
@@ -126,6 +133,26 @@ public class ScheduleFragment extends Fragment {
             }
         });
          */
+        fab = view.findViewById(R.id.floatingActionButton1);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new ListCompose();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.flContainer,fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        scheduleListAdapter.setOnItemLongClickListener(new ScheduleListsAdapter.OnItemLongClickListener() {
+            @Override
+            public void onItemLongClick(View itemView, int position) {
+                deleteScheduleList(position);
+            }
+
+        });
 
     }
     protected void queryScheduleLists() {
@@ -156,6 +183,42 @@ public class ScheduleFragment extends Fragment {
                 swipeContainer.setRefreshing(false);
             }
         });
+    }
+    protected void deleteScheduleList(int position){
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        ParseQuery<ScheduleList> query = ParseQuery.getQuery("Schedule");
+
+        query.whereEqualTo("objectId", listofScheduleLists.get(position).getObjectId());
+        System.out.println(position);
+        System.out.print(listofScheduleLists.get(position).getObjectId());
+
+        query.findInBackground(new FindCallback<ScheduleList>() {
+            @Override
+            public void done(List<ScheduleList> objects, ParseException e) {
+                if (e == null) {
+                    // delete schedule list
+                    listofScheduleLists.get(position).deleteInBackground(new DeleteCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            // toast null if deleted
+                            if (e == null) {
+                                listofScheduleLists.remove(position);
+                                scheduleListAdapter.notifyItemRemoved(position);
+                                Toast.makeText(getContext(), "Schedule Deleted", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // toast error
+                                Toast.makeText(getContext(), "Fail to Delete Schedule", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    // toast can't get data
+                    Toast.makeText(getContext(), "Fail to get data", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
     }
 
 }

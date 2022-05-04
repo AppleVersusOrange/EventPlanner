@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#071300"
+    android:backgroundTint="#071330"
+    android:orientation="vertical"
     tools:context=".fragments.ListCompose">
 
     <EditText
         android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:height="350dp"
         android:ems="10"
-        android:hint="Description"/>
+        android:hint="Description"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
 
     <Button
         android:id="@+id/btnLogOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LogOut"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#0C4160"
+        android:text="LogOut"
+        android:textColor="#738FA7" />
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="20dp"
+        android:background="#0C4160"
+        android:text="Submit"
+        android:textColor="#738FA7" />
 
 </LinearLayout>
