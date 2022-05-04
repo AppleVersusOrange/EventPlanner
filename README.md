@@ -295,9 +295,10 @@ Friend List.
  
 [x] Event feed filter. 
 
-[x] viewing friend's recent events.
+<img src='http://g.recordit.co/zHkKqtxA0G.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Viewing friend's upcoming events.
+
+<img src='friend_events.gif' width='250'> <br>
 
 [x] deleting planned events/schedules.
-
-**GIF Walkthrough**
-
