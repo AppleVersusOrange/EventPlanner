@@ -8,6 +8,7 @@
 4. [Milestone-1](#Milestone-1)
 5. [Milestone-2](#Milestone-2)
 6. [Milestone-3](#Milestone-3)
+7. [Milestone-4](#Milestone-4)
 
 ## Overview
 ### Description
@@ -288,6 +289,15 @@ Friend List.
 
 <img src='FriendList.gif' width='250'> <br>
 
-    
-    
+ ## Milestone-4
+  
+   **completed user stories**
+ 
+[x] Event feed filter. 
+
+[x] viewing friend's recent events.
+
+[x] deleting planned events/schedules.
+
+**GIF Walkthrough**
 
