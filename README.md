@@ -273,6 +273,14 @@ User can view/edit Settings.
 
 [x] User can add events to the schedule.
 
+[x] - button on event and event detail page with logic to add/compose that event to a schedule.
+[x] - updates parse schedule model with new event when added.
+[x] - recycler view to display planned events in planned event screen.
+[x] - button on event item to remove from schedule (currently user can remove event by holding on event's title)
+[x]  - update parse schedule model removing event.
+[x] - user can log out after composing a schedule list in schedule list screen
+[x] - user can log out after composing an event in the events planned screen
+
 <img src='http://g.recordit.co/xdfhRquHzQ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 **GIF Walkthrough**
