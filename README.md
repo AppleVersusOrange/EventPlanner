@@ -304,3 +304,7 @@ Viewing friend's upcoming events.
 [x] deleting planned events/schedules.
 
 <img src='http://g.recordit.co/msOL21hpNo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='http://g.recordit.co/2wR3T3ekly.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='http://g.recordit.co/DdM7xYe8Y2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
